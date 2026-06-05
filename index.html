@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Edgy IA Automation</title>
+  <title>EDGY Sistemas</title>
   <meta name="description" content="Automatización inteligente para tu negocio con el poder de la IA." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
@@ -11,17 +11,15 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --bg: #0d0d1a;
-      --bg2: #11112a;
-      --purple: #7c3aed;
-      --purple-light: #a855f7;
-      --pink: #ec4899;
-      --cyan: #06b6d4;
-      --green: #22c55e;
+      --bg: #031834;
+      --bg2: #041f42;
+      --primary: #67c87c;
+      --primary-light: #85d496;
+      --primary-dark: #4db36a;
       --white: #ffffff;
       --gray-400: #9ca3af;
       --gray-600: #4b5563;
-      --border: rgba(255,255,255,0.08);
+      --border: rgba(103,200,124,0.12);
       --card-bg: rgba(255,255,255,0.04);
       --radius: 16px;
       --radius-lg: 24px;
@@ -42,13 +40,13 @@
       position: fixed;
       border-radius: 50%;
       filter: blur(120px);
-      opacity: 0.15;
+      opacity: 0.12;
       pointer-events: none;
       z-index: 0;
     }
-    .blob-1 { width: 600px; height: 600px; background: var(--purple); top: -200px; left: -200px; }
-    .blob-2 { width: 500px; height: 500px; background: var(--pink); top: 40%; right: -200px; }
-    .blob-3 { width: 400px; height: 400px; background: var(--cyan); bottom: 10%; left: 20%; }
+    .blob-1 { width: 600px; height: 600px; background: var(--primary); top: -200px; left: -200px; }
+    .blob-2 { width: 500px; height: 500px; background: #031834; top: 40%; right: -200px; opacity: 0.6; }
+    .blob-3 { width: 400px; height: 400px; background: var(--primary-dark); bottom: 10%; left: 20%; }
 
     /* ── NAV ── */
     nav {
@@ -59,24 +57,41 @@
       align-items: center;
       justify-content: space-between;
       padding: 20px 48px;
-      background: rgba(13,13,26,0.8);
+      background: rgba(3,24,52,0.85);
       backdrop-filter: blur(16px);
       border-bottom: 1px solid var(--border);
     }
 
     .nav-logo {
-      font-size: 1.1rem;
-      font-weight: 800;
-      color: var(--white);
+      display: flex;
+      align-items: center;
+      gap: 10px;
       text-decoration: none;
-      letter-spacing: -0.5px;
     }
 
-    .nav-logo span {
-      background: linear-gradient(90deg, var(--purple-light), var(--pink));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
+    .nav-logo svg {
+      flex-shrink: 0;
+    }
+
+    .nav-logo-text {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.1;
+    }
+
+    .nav-logo-text .brand {
+      font-size: 1rem;
+      font-weight: 800;
+      color: var(--primary);
+      letter-spacing: 1px;
+    }
+
+    .nav-logo-text .sub {
+      font-size: 0.65rem;
+      font-weight: 500;
+      color: var(--gray-400);
+      letter-spacing: 2px;
+      text-transform: uppercase;
     }
 
     .nav-links {
@@ -96,15 +111,15 @@
     .nav-links a:hover { color: var(--white); }
 
     .nav-cta {
-      background: linear-gradient(135deg, var(--purple), var(--pink));
-      color: var(--white);
+      background: var(--primary);
+      color: var(--bg);
       padding: 10px 22px;
       border-radius: 50px;
       font-size: 0.875rem;
-      font-weight: 600;
+      font-weight: 700;
       text-decoration: none;
       transition: opacity 0.2s, transform 0.2s;
-      box-shadow: 0 0 24px rgba(124,58,237,0.4);
+      box-shadow: 0 0 24px rgba(103,200,124,0.35);
     }
 
     .nav-cta:hover { opacity: 0.9; transform: translateY(-1px); }
@@ -126,13 +141,13 @@
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      background: rgba(124,58,237,0.15);
-      border: 1px solid rgba(124,58,237,0.4);
+      background: rgba(103,200,124,0.12);
+      border: 1px solid rgba(103,200,124,0.35);
       border-radius: 50px;
       padding: 6px 18px;
       font-size: 0.8rem;
       font-weight: 600;
-      color: var(--purple-light);
+      color: var(--primary-light);
       margin-bottom: 32px;
       letter-spacing: 0.5px;
     }
@@ -140,13 +155,13 @@
     .badge-dot {
       width: 7px; height: 7px;
       border-radius: 50%;
-      background: var(--green);
+      background: var(--primary);
       animation: pulse 2s infinite;
     }
 
     @keyframes pulse {
-      0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(34,197,94,0.4); }
-      50% { opacity: 0.7; box-shadow: 0 0 0 6px rgba(34,197,94,0); }
+      0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(103,200,124,0.4); }
+      50% { opacity: 0.7; box-shadow: 0 0 0 6px rgba(103,200,124,0); }
     }
 
     h1 {
@@ -158,7 +173,7 @@
     }
 
     h1 .grad {
-      background: linear-gradient(135deg, var(--purple-light) 0%, var(--pink) 50%, var(--cyan) 100%);
+      background: linear-gradient(135deg, var(--primary-light) 0%, var(--primary) 60%, var(--primary-dark) 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
@@ -181,15 +196,15 @@
     }
 
     .btn-primary {
-      background: linear-gradient(135deg, var(--purple), var(--pink));
-      color: var(--white);
+      background: var(--primary);
+      color: var(--bg);
       padding: 16px 36px;
       border-radius: 50px;
       font-size: 1rem;
       font-weight: 700;
       text-decoration: none;
       transition: opacity 0.2s, transform 0.2s;
-      box-shadow: 0 0 32px rgba(124,58,237,0.5);
+      box-shadow: 0 0 32px rgba(103,200,124,0.4);
     }
 
     .btn-primary:hover { opacity: 0.9; transform: translateY(-2px); }
@@ -208,8 +223,8 @@
     }
 
     .btn-secondary:hover {
-      border-color: rgba(255,255,255,0.2);
-      background: rgba(255,255,255,0.07);
+      border-color: rgba(103,200,124,0.3);
+      background: rgba(103,200,124,0.07);
     }
 
     /* ── STATS ── */
@@ -237,7 +252,7 @@
       font-size: 2.4rem;
       font-weight: 900;
       letter-spacing: -1.5px;
-      background: linear-gradient(135deg, var(--purple-light), var(--cyan));
+      background: linear-gradient(135deg, var(--primary-light), var(--primary));
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
@@ -296,10 +311,10 @@
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 2px;
-      color: var(--purple-light);
+      color: var(--primary);
       margin-bottom: 16px;
-      background: rgba(124,58,237,0.1);
-      border: 1px solid rgba(124,58,237,0.3);
+      background: rgba(103,200,124,0.1);
+      border: 1px solid rgba(103,200,124,0.3);
       padding: 4px 14px;
       border-radius: 50px;
     }
@@ -346,8 +361,8 @@
     }
 
     .feature-card:hover {
-      border-color: rgba(124,58,237,0.4);
-      background: rgba(124,58,237,0.06);
+      border-color: rgba(103,200,124,0.4);
+      background: rgba(103,200,124,0.06);
       transform: translateY(-4px);
     }
 
@@ -361,12 +376,12 @@
       margin-bottom: 20px;
     }
 
-    .fi-purple { background: rgba(124,58,237,0.2); }
-    .fi-pink   { background: rgba(236,72,153,0.2); }
-    .fi-cyan   { background: rgba(6,182,212,0.2); }
-    .fi-green  { background: rgba(34,197,94,0.2); }
-    .fi-orange { background: rgba(249,115,22,0.2); }
-    .fi-yellow { background: rgba(234,179,8,0.2); }
+    .fi-1 { background: rgba(103,200,124,0.2); }
+    .fi-2 { background: rgba(77,179,106,0.2); }
+    .fi-3 { background: rgba(133,212,150,0.2); }
+    .fi-4 { background: rgba(103,200,124,0.15); }
+    .fi-5 { background: rgba(3,24,52,0.4); border: 1px solid rgba(103,200,124,0.2); }
+    .fi-6 { background: rgba(77,179,106,0.15); }
 
     .feature-card h3 {
       font-size: 1.05rem;
@@ -383,7 +398,7 @@
     /* ── HOW IT WORKS ── */
     #how {
       padding: 100px 24px;
-      background: rgba(255,255,255,0.02);
+      background: rgba(103,200,124,0.02);
       border-top: 1px solid var(--border);
       border-bottom: 1px solid var(--border);
     }
@@ -410,16 +425,13 @@
       transition: background 0.3s;
     }
 
-    .step:hover { background: rgba(124,58,237,0.08); }
+    .step:hover { background: rgba(103,200,124,0.07); }
 
     .step-number {
       font-size: 2.5rem;
       font-weight: 900;
       letter-spacing: -2px;
-      background: linear-gradient(135deg, var(--purple-light), var(--pink));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
+      color: var(--primary);
       margin-bottom: 16px;
       line-height: 1;
     }
@@ -461,7 +473,7 @@
       position: absolute;
       top: 0; left: 0; right: 0;
       height: 2px;
-      background: linear-gradient(90deg, var(--purple), var(--pink), var(--cyan));
+      background: linear-gradient(90deg, var(--primary-dark), var(--primary), var(--primary-light));
     }
 
     .form-fields {
@@ -489,15 +501,15 @@
     input::placeholder, textarea::placeholder { color: var(--gray-600); }
 
     input:focus, textarea:focus {
-      border-color: rgba(124,58,237,0.6);
-      background: rgba(124,58,237,0.07);
+      border-color: rgba(103,200,124,0.6);
+      background: rgba(103,200,124,0.06);
     }
 
     textarea { resize: vertical; min-height: 90px; }
 
     .form-submit {
-      background: linear-gradient(135deg, var(--purple), var(--pink));
-      color: var(--white);
+      background: var(--primary);
+      color: var(--bg);
       padding: 16px 32px;
       border-radius: 50px;
       font-size: 1rem;
@@ -507,7 +519,7 @@
       width: 100%;
       margin-top: 4px;
       transition: opacity 0.2s, transform 0.2s;
-      box-shadow: 0 0 28px rgba(124,58,237,0.4);
+      box-shadow: 0 0 28px rgba(103,200,124,0.35);
       letter-spacing: 0.2px;
     }
 
@@ -521,11 +533,11 @@
 
     .success-msg {
       display: none;
-      background: rgba(34,197,94,0.1);
-      border: 1px solid rgba(34,197,94,0.3);
+      background: rgba(103,200,124,0.1);
+      border: 1px solid rgba(103,200,124,0.3);
       border-radius: var(--radius);
       padding: 16px 20px;
-      color: #86efac;
+      color: var(--primary-light);
       font-size: 0.9rem;
       font-weight: 600;
       margin-top: 20px;
@@ -545,17 +557,26 @@
     }
 
     .footer-logo {
-      font-weight: 800;
-      font-size: 0.95rem;
-      color: var(--white);
+      display: flex;
+      align-items: center;
+      gap: 8px;
       text-decoration: none;
     }
 
-    .footer-logo span {
-      background: linear-gradient(90deg, var(--purple-light), var(--pink));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
+    .footer-logo .brand {
+      font-size: 0.95rem;
+      font-weight: 800;
+      color: var(--primary);
+      letter-spacing: 1px;
+    }
+
+    .footer-logo .sub {
+      font-size: 0.6rem;
+      font-weight: 500;
+      color: var(--gray-400);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      display: block;
     }
 
     footer p {
@@ -584,7 +605,37 @@
 
   <!-- NAV -->
   <nav>
-    <a class="nav-logo" href="#">Edgy <span>IA Automation</span></a>
+    <a class="nav-logo" href="#">
+      <svg width="36" height="36" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+        <!-- Brain outline -->
+        <path d="M30 65 Q20 55 22 42 Q24 28 38 24 Q48 20 55 26 Q62 20 72 24 Q84 30 82 46 Q80 58 70 65 Q62 72 50 72 Q38 72 30 65Z" fill="none" stroke="#ffffff" stroke-width="3.5" stroke-linejoin="round"/>
+        <!-- Brain stem -->
+        <line x1="50" y1="72" x2="50" y2="88" stroke="#ffffff" stroke-width="3.5"/>
+        <line x1="39" y1="82" x2="50" y2="88" stroke="#ffffff" stroke-width="3"/>
+        <line x1="61" y1="83" x2="50" y2="88" stroke="#ffffff" stroke-width="3"/>
+        <!-- Circuit traces -->
+        <line x1="31" y1="44" x2="43" y2="44" stroke="#ffffff" stroke-width="2.5"/>
+        <line x1="43" y1="44" x2="43" y2="30" stroke="#ffffff" stroke-width="2.5"/>
+        <line x1="43" y1="30" x2="57" y2="30" stroke="#ffffff" stroke-width="2.5"/>
+        <line x1="57" y1="44" x2="68" y2="44" stroke="#ffffff" stroke-width="2.5"/>
+        <line x1="57" y1="30" x2="57" y2="52" stroke="#ffffff" stroke-width="2.5"/>
+        <line x1="57" y1="52" x2="68" y2="52" stroke="#ffffff" stroke-width="2.5"/>
+        <line x1="43" y1="44" x2="43" y2="56" stroke="#ffffff" stroke-width="2.5"/>
+        <line x1="31" y1="56" x2="43" y2="56" stroke="#ffffff" stroke-width="2.5"/>
+        <!-- Green dots -->
+        <circle cx="30" cy="44" r="4.5" fill="#67c87c"/>
+        <circle cx="43" cy="27" r="4.5" fill="#67c87c"/>
+        <circle cx="57" cy="27" r="4.5" fill="#67c87c"/>
+        <circle cx="70" cy="44" r="4.5" fill="#67c87c"/>
+        <circle cx="70" cy="52" r="4" fill="#67c87c"/>
+        <circle cx="30" cy="56" r="4" fill="#67c87c"/>
+        <circle cx="50" cy="88" r="5" fill="#67c87c"/>
+      </svg>
+      <div class="nav-logo-text">
+        <span class="brand">EDGY</span>
+        <span class="sub">Sistemas</span>
+      </div>
+    </a>
     <ul class="nav-links">
       <li><a href="#features">Características</a></li>
       <li><a href="#how">Cómo funciona</a></li>
@@ -603,7 +654,7 @@
     <h1>Automatizá tu negocio<br><span class="grad">con el poder de la IA</span></h1>
 
     <p class="hero-sub">
-      Edgy conecta tus procesos, elimina tareas repetitivas y amplifica
+      EDGY Sistemas conecta tus procesos, elimina tareas repetitivas y amplifica
       la productividad de tu equipo — 24/7, sin intervención humana.
     </p>
 
@@ -652,32 +703,32 @@
 
       <div class="features-grid">
         <div class="feature-card">
-          <div class="feature-icon fi-purple">⚡</div>
+          <div class="feature-icon fi-1">⚡</div>
           <h3>Agentes autónomos</h3>
           <p>Desplegá agentes de IA que trabajan de forma independiente, toman decisiones y completan tareas complejas sin intervención manual.</p>
         </div>
         <div class="feature-card">
-          <div class="feature-icon fi-cyan">🔗</div>
+          <div class="feature-icon fi-2">🔗</div>
           <h3>Integraciones nativas</h3>
           <p>Conectá con Slack, Notion, HubSpot, Gmail y más. Sin código, sin fricción, en minutos.</p>
         </div>
         <div class="feature-card">
-          <div class="feature-icon fi-pink">📊</div>
+          <div class="feature-icon fi-3">📊</div>
           <h3>Analítica en tiempo real</h3>
           <p>Medí el impacto de cada automatización con dashboards claros. Entendé exactamente cuánto tiempo y dinero estás ahorrando.</p>
         </div>
         <div class="feature-card">
-          <div class="feature-icon fi-green">🛡️</div>
+          <div class="feature-icon fi-4">🛡️</div>
           <h3>Seguridad empresarial</h3>
           <p>Encriptación end-to-end, auditoría completa de acciones y cumplimiento de normativas internacionales.</p>
         </div>
         <div class="feature-card">
-          <div class="feature-icon fi-yellow">🎯</div>
+          <div class="feature-icon fi-5">🎯</div>
           <h3>Sin curva de aprendizaje</h3>
           <p>Interface visual e intuitiva. Cualquier miembro del equipo puede crear y gestionar automatizaciones desde el día uno.</p>
         </div>
         <div class="feature-card">
-          <div class="feature-icon fi-orange">🚀</div>
+          <div class="feature-icon fi-6">🚀</div>
           <h3>Escalable desde el inicio</h3>
           <p>Empezá con un proceso, escalá a cientos. La plataforma crece con vos sin cambios de arquitectura ni costos ocultos.</p>
         </div>
@@ -695,7 +746,7 @@
         <div class="step">
           <div class="step-number">01</div>
           <h3>Conectá tus herramientas</h3>
-          <p>Integrá en minutos las plataformas que ya usás. Edgy se adapta a tu stack, no al revés.</p>
+          <p>Integrá en minutos las plataformas que ya usás. EDGY Sistemas se adapta a tu stack, no al revés.</p>
         </div>
         <div class="step">
           <div class="step-number">02</div>
@@ -710,7 +761,7 @@
         <div class="step">
           <div class="step-number">04</div>
           <h3>Optimizá sin parar</h3>
-          <p>Edgy aprende de cada ejecución y sugiere mejoras continuas para maximizar tu eficiencia.</p>
+          <p>EDGY Sistemas aprende de cada ejecución y sugiere mejoras continuas para maximizar tu eficiencia.</p>
         </div>
       </div>
     </div>
@@ -720,7 +771,7 @@
   <section id="waitlist" class="section-wrapper">
     <div style="max-width:680px; margin:0 auto; padding:120px 24px; text-align:center;">
       <span class="section-label">Acceso anticipado</span>
-      <h2 class="section-title">Sé de los primeros<br>en automatizar con Edgy</h2>
+      <h2 class="section-title">Sé de los primeros<br>en automatizar con EDGY</h2>
       <p class="section-sub" style="margin:0 auto;">Dejá tus datos y te contactamos cuando abramos el acceso. Sin spam.</p>
 
       <div class="waitlist-card" style="margin-top:40px; text-align:left;">
@@ -742,8 +793,34 @@
 
   <!-- FOOTER -->
   <footer>
-    <a class="footer-logo" href="#">Edgy <span>IA Automation</span></a>
-    <p>© 2026 Edgy IA Automation. Todos los derechos reservados.</p>
+    <a class="footer-logo" href="#">
+      <svg width="28" height="28" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+        <path d="M30 65 Q20 55 22 42 Q24 28 38 24 Q48 20 55 26 Q62 20 72 24 Q84 30 82 46 Q80 58 70 65 Q62 72 50 72 Q38 72 30 65Z" fill="none" stroke="#ffffff" stroke-width="3.5" stroke-linejoin="round"/>
+        <line x1="50" y1="72" x2="50" y2="88" stroke="#ffffff" stroke-width="3.5"/>
+        <line x1="39" y1="82" x2="50" y2="88" stroke="#ffffff" stroke-width="3"/>
+        <line x1="61" y1="83" x2="50" y2="88" stroke="#ffffff" stroke-width="3"/>
+        <line x1="31" y1="44" x2="43" y2="44" stroke="#ffffff" stroke-width="2.5"/>
+        <line x1="43" y1="44" x2="43" y2="30" stroke="#ffffff" stroke-width="2.5"/>
+        <line x1="43" y1="30" x2="57" y2="30" stroke="#ffffff" stroke-width="2.5"/>
+        <line x1="57" y1="44" x2="68" y2="44" stroke="#ffffff" stroke-width="2.5"/>
+        <line x1="57" y1="30" x2="57" y2="52" stroke="#ffffff" stroke-width="2.5"/>
+        <line x1="57" y1="52" x2="68" y2="52" stroke="#ffffff" stroke-width="2.5"/>
+        <line x1="43" y1="44" x2="43" y2="56" stroke="#ffffff" stroke-width="2.5"/>
+        <line x1="31" y1="56" x2="43" y2="56" stroke="#ffffff" stroke-width="2.5"/>
+        <circle cx="30" cy="44" r="4.5" fill="#67c87c"/>
+        <circle cx="43" cy="27" r="4.5" fill="#67c87c"/>
+        <circle cx="57" cy="27" r="4.5" fill="#67c87c"/>
+        <circle cx="70" cy="44" r="4.5" fill="#67c87c"/>
+        <circle cx="70" cy="52" r="4" fill="#67c87c"/>
+        <circle cx="30" cy="56" r="4" fill="#67c87c"/>
+        <circle cx="50" cy="88" r="5" fill="#67c87c"/>
+      </svg>
+      <div>
+        <span class="brand">EDGY</span>
+        <span class="sub">Sistemas</span>
+      </div>
+    </a>
+    <p>© 2026 EDGY Sistemas. Todos los derechos reservados.</p>
   </footer>
 
   <script>
@@ -755,7 +832,7 @@
 
     window.addEventListener('scroll', () => {
       document.querySelector('nav').style.boxShadow =
-        window.scrollY > 20 ? '0 4px 32px rgba(0,0,0,0.3)' : 'none';
+        window.scrollY > 20 ? '0 4px 32px rgba(0,0,0,0.4)' : 'none';
     });
   </script>
 </body>

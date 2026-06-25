@@ -3,26 +3,33 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>EDGY Sistemas</title>
-  <meta name="description" content="Automatización inteligente para tu negocio con la potencia de la Tecnología." />
+  <title>EDGY Sistemas — Automatización con IA para PyMEs</title>
+  <meta name="description" content="Software de gestión modular y automatización con inteligencia artificial para PyMEs argentinas. Tesorería, ventas, stock y agentes de IA que trabajan por vos." />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='12' fill='%230C1A2E'/><text x='10' y='48' font-size='46' font-family='Inter,Arial,sans-serif' font-weight='900' fill='%231D6EEA'>E</text></svg>" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --bg: #031834;
-      --bg2: #041f42;
-      --primary: #67c87c;
-      --primary-light: #85d496;
-      --primary-dark: #4db36a;
-      --white: #ffffff;
-      --gray-400: #9ca3af;
-      --gray-600: #4b5563;
-      --border: rgba(103,200,124,0.12);
-      --card-bg: rgba(255,255,255,0.04);
-      --radius: 16px;
-      --radius-lg: 24px;
+      --bg:           #F2F1EE;
+      --bg2:          #FFFFFF;
+      --navy:         #0C1A2E;
+      --primary:      #1D6EEA;
+      --primary-light:#6BAEFF;
+      --primary-dark: #1558C0;
+      --gold:         #D4A520;
+      --gold-dark:    #9B7519;
+      --gold-light:   #F0C040;
+      --text:         #0C1A2E;
+      --text-muted:   #3D4A5C;
+      --white:        #ffffff;
+      --gray-400:     #6B7F97;
+      --gray-600:     #8A92A0;
+      --border:       #E2E8F3;
+      --card-bg:      #FFFFFF;
+      --radius:       16px;
+      --radius-lg:    24px;
     }
 
     html { scroll-behavior: smooth; }
@@ -30,7 +37,7 @@
     body {
       font-family: 'Inter', sans-serif;
       background: var(--bg);
-      color: var(--white);
+      color: var(--text);
       line-height: 1.6;
       overflow-x: hidden;
     }
@@ -40,13 +47,13 @@
       position: fixed;
       border-radius: 50%;
       filter: blur(120px);
-      opacity: 0.12;
+      opacity: 0.06;
       pointer-events: none;
       z-index: 0;
     }
     .blob-1 { width: 600px; height: 600px; background: var(--primary); top: -200px; left: -200px; }
-    .blob-2 { width: 500px; height: 500px; background: #031834; top: 40%; right: -200px; opacity: 0.6; }
-    .blob-3 { width: 400px; height: 400px; background: var(--primary-dark); bottom: 10%; left: 20%; }
+    .blob-2 { width: 500px; height: 500px; background: var(--primary-dark); top: 40%; right: -200px; opacity: 0.04; }
+    .blob-3 { width: 400px; height: 400px; background: var(--gold); bottom: 10%; left: 20%; }
 
     /* ── NAV ── */
     nav {
@@ -57,31 +64,24 @@
       align-items: center;
       justify-content: space-between;
       padding: 20px 48px;
-      background: rgba(3,24,52,0.85);
-      backdrop-filter: blur(16px);
-      border-bottom: 1px solid var(--border);
+      background: var(--navy);
+      border-bottom: 1px solid rgba(29,110,234,0.2);
     }
 
     .nav-logo {
-      font-size: 1.1rem;
-      font-weight: 800;
+      font-size: 1.60rem;
+      font-weight: 900;
       color: var(--white);
       text-decoration: none;
-      letter-spacing: -0.5px;
+      letter-spacing: -1px;
     }
 
-    .nav-logo .brand {
-      color: var(--primary);
-    }
+    .nav-logo .brand { color: var(--primary-light); }
 
-    .nav-links {
-      display: flex;
-      gap: 32px;
-      list-style: none;
-    }
+    .nav-links { display: flex; gap: 32px; list-style: none; }
 
     .nav-links a {
-      color: var(--gray-400);
+      color: rgba(255,255,255,0.88);
       text-decoration: none;
       font-size: 0.9rem;
       font-weight: 500;
@@ -91,15 +91,15 @@
     .nav-links a:hover { color: var(--white); }
 
     .nav-cta {
-      background: var(--primary);
-      color: var(--bg);
+      background: var(--white);
+      color: var(--navy);
       padding: 10px 22px;
       border-radius: 50px;
       font-size: 0.875rem;
       font-weight: 700;
       text-decoration: none;
       transition: opacity 0.2s, transform 0.2s;
-      box-shadow: 0 0 24px rgba(103,200,124,0.35);
+      box-shadow: 0 2px 12px rgba(255,255,255,0.2);
     }
 
     .nav-cta:hover { opacity: 0.9; transform: translateY(-1px); }
@@ -115,39 +115,53 @@
       justify-content: center;
       text-align: center;
       padding: 140px 24px 80px;
+      overflow: hidden;
+    }
+
+    .hero-watermark {
+      position: absolute;
+      left: 50%;
+      top: 48%;
+      transform: translate(-50%, -50%);
+      width: 82%;
+      max-width: 820px;
+      opacity: 0.06;
+      pointer-events: none;
+      user-select: none;
+      z-index: 0;
     }
 
     .badge {
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      background: rgba(103,200,124,0.12);
-      border: 1px solid rgba(103,200,124,0.35);
+      background: rgba(29,110,234,0.08);
+      border: 1px solid rgba(29,110,234,0.3);
       border-radius: 50px;
       padding: 6px 18px;
       font-size: 0.8rem;
       font-weight: 600;
-      color: var(--primary-light);
+      color: var(--primary-dark);
       margin-bottom: 32px;
       letter-spacing: 0.5px;
       cursor: pointer;
       transition: background 0.2s, border-color 0.2s;
     }
     .badge:hover {
-      background: rgba(103,200,124,0.2);
-      border-color: rgba(103,200,124,0.6);
+      background: rgba(29,110,234,0.14);
+      border-color: rgba(29,110,234,0.5);
     }
 
     .badge-dot {
       width: 7px; height: 7px;
       border-radius: 50%;
-      background: var(--primary);
+      background: var(--gold);
       animation: pulse 2s infinite;
     }
 
     @keyframes pulse {
-      0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(103,200,124,0.4); }
-      50% { opacity: 0.7; box-shadow: 0 0 0 6px rgba(103,200,124,0); }
+      0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(212,165,32,0.5); }
+      50% { opacity: 0.7; box-shadow: 0 0 0 6px rgba(212,165,32,0); }
     }
 
     h1 {
@@ -156,10 +170,11 @@
       letter-spacing: -3px;
       line-height: 1.0;
       max-width: 900px;
+      color: var(--text);
     }
 
     h1 .grad {
-      background: linear-gradient(135deg, var(--primary-light) 0%, var(--primary) 60%, var(--primary-dark) 100%);
+      background: linear-gradient(135deg, var(--gold-light) 0%, var(--gold) 60%, var(--gold-dark) 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
@@ -168,7 +183,7 @@
     .hero-sub {
       margin-top: 24px;
       font-size: clamp(1rem, 2vw, 1.2rem);
-      color: var(--gray-400);
+      color: var(--text-muted);
       max-width: 560px;
       line-height: 1.7;
     }
@@ -182,35 +197,35 @@
     }
 
     .btn-primary {
-      background: var(--primary);
-      color: var(--bg);
+      background: var(--navy);
+      color: var(--white);
       padding: 16px 36px;
       border-radius: 50px;
       font-size: 1rem;
       font-weight: 700;
       text-decoration: none;
       transition: opacity 0.2s, transform 0.2s;
-      box-shadow: 0 0 32px rgba(103,200,124,0.4);
+      box-shadow: 0 4px 24px rgba(12,26,46,0.3);
     }
 
     .btn-primary:hover { opacity: 0.9; transform: translateY(-2px); }
 
     .btn-secondary {
-      background: var(--card-bg);
-      color: var(--white);
-      border: 1px solid var(--border);
+      background: var(--white);
+      color: var(--text);
+      border: 1.5px solid var(--border);
       padding: 16px 36px;
       border-radius: 50px;
       font-size: 1rem;
       font-weight: 600;
       text-decoration: none;
       transition: border-color 0.2s, background 0.2s;
-      backdrop-filter: blur(8px);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
     }
 
     .btn-secondary:hover {
-      border-color: rgba(103,200,124,0.3);
-      background: rgba(103,200,124,0.07);
+      border-color: rgba(29,110,234,0.4);
+      background: rgba(29,110,234,0.04);
     }
 
     /* ── STATS ── */
@@ -218,10 +233,10 @@
       margin-top: 72px;
       display: flex;
       gap: 0;
-      border: 1px solid var(--border);
+      border: 1.5px solid var(--border);
       border-radius: var(--radius-lg);
-      background: var(--card-bg);
-      backdrop-filter: blur(12px);
+      background: var(--white);
+      box-shadow: 0 4px 24px rgba(12,26,46,0.08);
       overflow: hidden;
     }
 
@@ -238,10 +253,7 @@
       font-size: 2.4rem;
       font-weight: 900;
       letter-spacing: -1.5px;
-      background: linear-gradient(135deg, var(--primary-light), var(--primary));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
+      color: var(--navy);
     }
 
     .stat-label {
@@ -282,14 +294,11 @@
       font-size: 1.1rem;
       font-weight: 800;
       letter-spacing: -0.5px;
-      color: var(--white);
+      color: var(--text);
     }
 
     /* ── SECTION COMMON ── */
-    .section-wrapper {
-      position: relative;
-      z-index: 1;
-    }
+    .section-wrapper { position: relative; z-index: 1; }
 
     .section-label {
       display: inline-block;
@@ -297,10 +306,10 @@
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 2px;
-      color: var(--primary);
+      color: var(--primary-dark);
       margin-bottom: 16px;
-      background: rgba(103,200,124,0.1);
-      border: 1px solid rgba(103,200,124,0.3);
+      background: rgba(29,110,234,0.08);
+      border: 1px solid rgba(29,110,234,0.2);
       padding: 4px 14px;
       border-radius: 50px;
     }
@@ -311,10 +320,11 @@
       letter-spacing: -1.5px;
       line-height: 1.1;
       margin-bottom: 16px;
+      color: var(--text);
     }
 
     .section-sub {
-      color: var(--gray-400);
+      color: var(--text-muted);
       font-size: 1.05rem;
       max-width: 520px;
       line-height: 1.7;
@@ -338,17 +348,17 @@
     }
 
     .feature-card {
-      background: var(--card-bg);
-      border: 1px solid var(--border);
+      background: var(--white);
+      border: 1.5px solid var(--border);
       border-radius: var(--radius-lg);
       padding: 32px;
-      transition: border-color 0.3s, transform 0.3s, background 0.3s;
-      backdrop-filter: blur(8px);
+      transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
+      box-shadow: 0 2px 12px rgba(12,26,46,0.05);
     }
 
     .feature-card:hover {
-      border-color: rgba(103,200,124,0.4);
-      background: rgba(103,200,124,0.06);
+      border-color: rgba(29,110,234,0.35);
+      box-shadow: 0 8px 32px rgba(29,110,234,0.1);
       transform: translateY(-4px);
     }
 
@@ -362,56 +372,54 @@
       margin-bottom: 20px;
     }
 
-    .fi-1 { background: rgba(103,200,124,0.2); }
-    .fi-2 { background: rgba(77,179,106,0.2); }
-    .fi-3 { background: rgba(133,212,150,0.2); }
-    .fi-4 { background: rgba(103,200,124,0.15); }
-    .fi-5 { background: rgba(3,24,52,0.4); border: 1px solid rgba(103,200,124,0.2); }
-    .fi-6 { background: rgba(77,179,106,0.15); }
+    .fi-1 { background: rgba(29,110,234,0.1); }
+    .fi-2 { background: rgba(212,165,32,0.12); }
+    .fi-3 { background: rgba(29,110,234,0.08); }
+    .fi-4 { background: rgba(21,88,192,0.1); }
+    .fi-5 { background: rgba(12,26,46,0.06); border: 1px solid rgba(29,110,234,0.15); }
+    .fi-6 { background: rgba(212,165,32,0.1); }
 
     .feature-card h3 {
       font-size: 1.05rem;
       font-weight: 700;
       margin-bottom: 10px;
+      color: var(--text);
     }
 
     .feature-card p {
       font-size: 0.875rem;
-      color: var(--gray-400);
+      color: var(--text-muted);
       line-height: 1.7;
     }
 
-    /* ── HOW IT WORKS ── */
     #how {
       padding: 100px 24px;
-      background: rgba(103,200,124,0.02);
+      background: var(--white);
       border-top: 1px solid var(--border);
       border-bottom: 1px solid var(--border);
     }
 
-    .how-inner {
-      max-width: 1140px;
-      margin: 0 auto;
-    }
+    .how-inner { max-width: 1140px; margin: 0 auto; }
 
     .steps {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
       gap: 2px;
       margin-top: 60px;
-      border: 1px solid var(--border);
+      border: 1.5px solid var(--border);
       border-radius: var(--radius-lg);
       overflow: hidden;
       background: var(--border);
+      box-shadow: 0 4px 24px rgba(12,26,46,0.06);
     }
 
     .step {
       padding: 36px 32px;
-      background: var(--bg2);
+      background: var(--white);
       transition: background 0.3s;
     }
 
-    .step:hover { background: rgba(103,200,124,0.07); }
+    .step:hover { background: rgba(29,110,234,0.04); }
 
     .step-number {
       font-size: 2.5rem;
@@ -426,11 +434,12 @@
       font-size: 1rem;
       font-weight: 700;
       margin-bottom: 10px;
+      color: var(--text);
     }
 
     .step p {
       font-size: 0.875rem;
-      color: var(--gray-400);
+      color: var(--text-muted);
       line-height: 1.7;
     }
 
@@ -445,11 +454,11 @@
     }
 
     .waitlist-card {
-      background: var(--card-bg);
-      border: 1px solid var(--border);
+      background: var(--white);
+      border: 1.5px solid var(--border);
       border-radius: var(--radius-lg);
       padding: 60px 48px;
-      backdrop-filter: blur(12px);
+      box-shadow: 0 8px 40px rgba(12,26,46,0.08);
       position: relative;
       overflow: hidden;
     }
@@ -458,15 +467,8 @@
       content: '';
       position: absolute;
       top: 0; left: 0; right: 0;
-      height: 2px;
+      height: 3px;
       background: linear-gradient(90deg, var(--primary-dark), var(--primary), var(--primary-light));
-    }
-
-    .form-fields {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-      margin-top: 36px;
     }
 
     input[type="text"],
@@ -474,12 +476,12 @@
     textarea {
       width: 100%;
       padding: 14px 18px;
-      background: rgba(255,255,255,0.05);
-      border: 1px solid var(--border);
+      background: var(--bg);
+      border: 1.5px solid var(--border);
       border-radius: var(--radius);
       font-size: 0.95rem;
       font-family: 'Inter', sans-serif;
-      color: var(--white);
+      color: var(--text);
       outline: none;
       transition: border-color 0.2s, background 0.2s;
     }
@@ -487,15 +489,15 @@
     input::placeholder, textarea::placeholder { color: var(--gray-600); }
 
     input:focus, textarea:focus {
-      border-color: rgba(103,200,124,0.6);
-      background: rgba(103,200,124,0.06);
+      border-color: rgba(29,110,234,0.5);
+      background: var(--white);
     }
 
     textarea { resize: vertical; min-height: 90px; }
 
     .form-submit {
-      background: var(--primary);
-      color: var(--bg);
+      background: var(--navy);
+      color: var(--white);
       padding: 16px 32px;
       border-radius: 50px;
       font-size: 1rem;
@@ -505,11 +507,11 @@
       width: 100%;
       margin-top: 4px;
       transition: opacity 0.2s, transform 0.2s;
-      box-shadow: 0 0 28px rgba(103,200,124,0.35);
+      box-shadow: 0 4px 20px rgba(12,26,46,0.25);
       letter-spacing: 0.2px;
     }
 
-    .form-submit:hover { opacity: 0.9; transform: translateY(-2px); }
+    .form-submit:hover { opacity: 0.85; transform: translateY(-2px); }
 
     .form-note {
       margin-top: 14px;
@@ -519,11 +521,11 @@
 
     .success-msg {
       display: none;
-      background: rgba(103,200,124,0.1);
-      border: 1px solid rgba(103,200,124,0.3);
+      background: rgba(29,110,234,0.06);
+      border: 1px solid rgba(29,110,234,0.2);
       border-radius: var(--radius);
       padding: 16px 20px;
-      color: var(--primary-light);
+      color: var(--primary-dark);
       font-size: 0.9rem;
       font-weight: 600;
       margin-top: 20px;
@@ -531,7 +533,8 @@
 
     /* ── FOOTER ── */
     footer {
-      border-top: 1px solid var(--border);
+      background: var(--navy);
+      border-top: none;
       padding: 32px 48px;
       display: flex;
       align-items: center;
@@ -549,14 +552,9 @@
       text-decoration: none;
     }
 
-    .footer-logo .brand {
-      color: var(--primary);
-    }
+    .footer-logo .brand { color: var(--primary-light); }
 
-    footer p {
-      font-size: 0.8rem;
-      color: var(--gray-600);
-    }
+    footer p { font-size: 0.8rem; color: rgba(255,255,255,0.4); }
 
     /* ── RESPONSIVE ── */
     @media (max-width: 768px) {
@@ -574,16 +572,16 @@
     ═══════════════════════════════════════ */
     .m-overlay {
       display: none; position: fixed; inset: 0; z-index: 1000;
-      background: rgba(3,24,52,0.93); backdrop-filter: blur(10px);
+      background: rgba(12,26,46,0.85); backdrop-filter: blur(10px);
       align-items: center; justify-content: center; padding: 20px;
     }
     .m-overlay.open { display: flex; }
     .m-box {
-      background: var(--bg2); border: 1px solid rgba(103,200,124,0.18);
+      background: var(--navy); border: 1px solid rgba(29,110,234,0.2);
       border-radius: var(--radius-lg); width: 100%; max-width: 700px;
       max-height: 92vh; overflow-y: auto; position: relative;
-      box-shadow: 0 40px 100px rgba(0,0,0,0.7), 0 0 0 1px rgba(103,200,124,0.08);
-      scrollbar-width: thin; scrollbar-color: rgba(103,200,124,0.3) transparent;
+      box-shadow: 0 40px 100px rgba(0,0,0,0.5);
+      scrollbar-width: thin; scrollbar-color: rgba(29,110,234,0.3) transparent;
     }
     .m-close {
       position: sticky; top: 0; float: right; margin: 14px 14px 0 0;
@@ -598,8 +596,8 @@
 
     .m-head { text-align: center; margin-bottom: 26px; padding-top: 6px; }
     .m-pill {
-      display: inline-block; background: rgba(103,200,124,0.1);
-      border: 1px solid rgba(103,200,124,0.3); color: var(--primary-light);
+      display: inline-block; background: rgba(29,110,234,0.1);
+      border: 1px solid rgba(29,110,234,0.3); color: var(--primary-light);
       font-size: 0.68rem; font-weight: 700; letter-spacing: 2px;
       text-transform: uppercase; padding: 4px 14px; border-radius: 50px; margin-bottom: 12px;
     }
@@ -614,18 +612,33 @@
       border-radius: var(--radius); padding: 16px 10px; text-align: center; cursor: pointer;
       transition: border-color 0.2s, background 0.2s, transform 0.15s, box-shadow 0.2s;
     }
-    .t-card:hover { border-color: rgba(103,200,124,0.35); background: rgba(103,200,124,0.05); transform: translateY(-2px); }
-    .t-card.sel { border-color: var(--primary); background: rgba(103,200,124,0.1); box-shadow: 0 0 20px rgba(103,200,124,0.18); transform: translateY(-2px); }
+    .t-card:hover { border-color: rgba(29,110,234,0.35); background: rgba(29,110,234,0.05); transform: translateY(-2px); }
+    .t-card.sel { border-color: var(--primary); background: rgba(29,110,234,0.1); box-shadow: 0 0 20px rgba(29,110,234,0.18); transform: translateY(-2px); }
     .t-monto { font-size: 0.92rem; font-weight: 800; color: var(--white); letter-spacing: -0.3px; }
     .t-ret { font-size: 0.68rem; color: var(--primary-light); margin-top: 5px; font-weight: 600; }
     .t-cupo { font-size: 0.6rem; color: var(--gray-400); margin-top: 6px; display: flex; align-items: center; justify-content: center; gap: 4px; }
     .t-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--primary); flex-shrink: 0; }
 
+    /* ── PLAZO GRID (Step 2) ── */
+    .plazo-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 12px; margin-bottom: 18px; }
+    .p-card {
+      background: rgba(255,255,255,0.03); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 24px 16px; text-align: center; cursor: pointer;
+      transition: border-color 0.2s, background 0.2s, transform 0.15s, box-shadow 0.2s;
+    }
+    .p-card:hover { border-color: rgba(29,110,234,0.35); background: rgba(29,110,234,0.05); transform: translateY(-2px); }
+    .p-card.sel { border-color: var(--primary); background: rgba(29,110,234,0.1); box-shadow: 0 0 20px rgba(29,110,234,0.18); transform: translateY(-2px); }
+    .p-meses { font-size: 2rem; font-weight: 900; color: var(--white); letter-spacing: -1px; line-height: 1; }
+    .p-label { font-size: 0.68rem; color: var(--gray-400); text-transform: uppercase; letter-spacing: 1px; margin-top: 4px; }
+    .p-divider { width: 28px; height: 1px; background: var(--border); margin: 12px auto; }
+    .p-cuota { font-size: 0.82rem; color: var(--primary-light); font-weight: 700; }
+    .p-desc { font-size: 0.62rem; color: var(--gray-400); margin-top: 3px; }
+
     .m-btn-next {
       display: none; width: 100%; padding: 16px; border-radius: 50px;
-      background: var(--primary); color: var(--bg); font-size: 1rem; font-weight: 700;
+      background: var(--gold); color: var(--bg); font-size: 1rem; font-weight: 700;
       border: none; cursor: pointer; margin-top: 6px;
-      transition: opacity 0.2s, transform 0.2s; box-shadow: 0 0 28px rgba(103,200,124,0.3);
+      transition: opacity 0.2s, transform 0.2s; box-shadow: 0 0 28px rgba(212,165,32,0.35);
     }
     .m-btn-next.vis { display: block; }
     .m-btn-next:hover { opacity: 0.9; transform: translateY(-2px); }
@@ -638,11 +651,11 @@
     .m-back:hover { color: var(--white); }
 
     .tk-doc { border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; margin-bottom: 26px; background: rgba(255,255,255,0.02); }
-    .tk-head { display: flex; align-items: center; justify-content: space-between; padding: 16px 20px; background: rgba(103,200,124,0.06); border-bottom: 1px solid var(--border); }
+    .tk-head { display: flex; align-items: center; justify-content: space-between; padding: 16px 20px; background: rgba(29,110,234,0.06); border-bottom: 1px solid var(--border); }
     .tk-brand { font-size: 0.92rem; font-weight: 800; }
     .tk-brand span { color: var(--primary); }
     .tk-doc-label { font-size: 0.62rem; text-transform: uppercase; letter-spacing: 1.8px; color: var(--gray-400); margin-top: 2px; }
-    .tk-convoc { font-size: 0.62rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; color: var(--primary-light); background: rgba(103,200,124,0.12); padding: 4px 10px; border-radius: 50px; border: 1px solid rgba(103,200,124,0.25); white-space: nowrap; }
+    .tk-convoc { font-size: 0.62rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; color: var(--primary-light); background: rgba(29,110,234,0.12); padding: 4px 10px; border-radius: 50px; border: 1px solid rgba(29,110,234,0.25); white-space: nowrap; }
     .tk-metrics { display: grid; grid-template-columns: repeat(3,1fr); border-bottom: 1px solid var(--border); }
     .tk-metric { padding: 15px 10px; text-align: center; border-right: 1px solid var(--border); }
     .tk-metric:last-child { border-right: none; }
@@ -659,10 +672,10 @@
     .tk-arr.g { color: var(--primary-light); }
     .tk-body { padding: 16px 18px; }
     .tk-conds { display: grid; grid-template-columns: 1fr 1fr; }
-    .tk-row { display: flex; justify-content: space-between; align-items: baseline; padding: 5px 0; border-bottom: 1px solid rgba(103,200,124,0.07); font-size: 0.76rem; }
+    .tk-row { display: flex; justify-content: space-between; align-items: baseline; padding: 5px 0; border-bottom: 1px solid rgba(29,110,234,0.07); font-size: 0.76rem; }
     .tk-row .l { color: var(--gray-400); font-size: 0.7rem; }
     .tk-row .v { color: var(--white); font-weight: 600; text-align: right; }
-    .tk-note { margin-top: 14px; background: rgba(103,200,124,0.05); border: 1px solid rgba(103,200,124,0.12); border-radius: 10px; padding: 11px 14px; }
+    .tk-note { margin-top: 14px; background: rgba(29,110,234,0.05); border: 1px solid rgba(29,110,234,0.12); border-radius: 10px; padding: 11px 14px; }
     .tk-note p { font-size: 0.74rem; color: var(--gray-400); line-height: 1.65; }
     .tk-note strong { color: var(--white); }
 
@@ -670,8 +683,8 @@
     .m-fields { display: flex; flex-direction: column; gap: 10px; margin-bottom: 12px; }
     .m-input { width: 100%; padding: 13px 16px; background: rgba(255,255,255,0.05); border: 1px solid var(--border); border-radius: var(--radius); font-size: 0.9rem; font-family: 'Inter', sans-serif; color: var(--white); outline: none; transition: border-color 0.2s, background 0.2s; }
     .m-input::placeholder { color: var(--gray-600); }
-    .m-input:focus { border-color: rgba(103,200,124,0.5); background: rgba(103,200,124,0.04); }
-    .m-submit { width: 100%; padding: 16px; border-radius: 50px; background: var(--primary); color: var(--bg); font-size: 1rem; font-weight: 700; border: none; cursor: pointer; transition: opacity 0.2s, transform 0.2s; box-shadow: 0 0 28px rgba(103,200,124,0.3); }
+    .m-input:focus { border-color: rgba(29,110,234,0.5); background: rgba(29,110,234,0.04); }
+    .m-submit { width: 100%; padding: 16px; border-radius: 50px; background: var(--gold); color: var(--bg); font-size: 1rem; font-weight: 700; border: none; cursor: pointer; transition: opacity 0.2s, transform 0.2s; box-shadow: 0 0 28px rgba(212,165,32,0.35); }
     .m-submit:hover { opacity: 0.9; transform: translateY(-2px); }
     .m-submit:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
     .m-disclaimer { font-size: 0.66rem; color: var(--gray-600); margin-top: 10px; line-height: 1.55; text-align: center; }
@@ -679,6 +692,195 @@
     .m-success-icon { font-size: 3rem; margin-bottom: 12px; }
     .m-success h3 { font-size: 1.35rem; font-weight: 900; letter-spacing: -0.5px; margin-bottom: 10px; }
     .m-success p { color: var(--gray-400); font-size: 0.88rem; line-height: 1.7; }
+    .feat-group { margin-bottom: 20px; padding-top: 56px; }
+    .feat-group-tag { display: inline-block; font-size: 0.68rem; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: var(--primary-dark); background: rgba(29,110,234,0.08); border: 1px solid rgba(29,110,234,0.2); padding: 3px 12px; border-radius: 50px; margin-bottom: 10px; }
+    .feat-group-title { font-size: 1.35rem; font-weight: 800; color: var(--text); margin-bottom: 6px; letter-spacing: -0.5px; }
+    .feat-group-sub { font-size: 0.88rem; color: var(--text-muted); max-width: 540px; line-height: 1.65; }
+    .feat-divider { border: none; border-top: 1.5px solid var(--border); margin-top: 56px; }
+    .feat-badge { display: inline-block; font-size: 0.58rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; padding: 2px 8px; border-radius: 50px; margin-left: 7px; vertical-align: middle; }
+    .feat-badge.live { color: #14532d; background: rgba(22,163,74,0.1); border: 1px solid rgba(22,163,74,0.35); }
+    .feat-badge.soon { color: var(--gray-400); background: rgba(107,127,151,0.1); border: 1px solid rgba(107,127,151,0.25); }
+    /* ── EXAMPLES ── */
+    .examples-intro { margin-top: 56px; margin-bottom: 28px; }
+    .examples-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; }
+    @media (max-width: 900px) { .examples-grid { grid-template-columns: repeat(2,1fr); } }
+    @media (max-width: 580px) { .examples-grid { grid-template-columns: 1fr; } }
+
+    .example-card {
+      background: var(--white);
+      border: 1.5px solid var(--border);
+      border-left: 4px solid var(--primary);
+      border-radius: var(--radius);
+      padding: 24px 22px;
+      box-shadow: 0 2px 12px rgba(12,26,46,0.05);
+      transition: box-shadow 0.2s, border-left-color 0.2s;
+    }
+    .example-card:hover {
+      box-shadow: 0 6px 24px rgba(29,110,234,0.1);
+      border-left-color: var(--navy);
+    }
+    .example-tag {
+      display: inline-block;
+      font-size: 0.6rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 1.5px;
+      color: var(--primary-dark);
+      background: rgba(29,110,234,0.07);
+      border: 1px solid rgba(29,110,234,0.18);
+      padding: 2px 9px; border-radius: 50px;
+      margin-bottom: 10px;
+    }
+    .example-card h4 {
+      font-size: 0.95rem; font-weight: 800;
+      color: var(--text); margin-bottom: 8px;
+      letter-spacing: -0.3px;
+    }
+    .example-card p {
+      font-size: 0.8rem; color: var(--text-muted);
+      line-height: 1.65; margin-bottom: 12px;
+    }
+    .example-quote {
+      background: rgba(29,110,234,0.05);
+      border: 1px solid rgba(29,110,234,0.15);
+      border-radius: 8px;
+      padding: 10px 14px;
+      font-size: 0.75rem;
+      color: var(--navy);
+      font-style: italic;
+      line-height: 1.55;
+    }
+    .example-quote::before { content: '"'; font-weight: 800; color: var(--primary); font-style: normal; }
+    .example-quote::after  { content: '"'; font-weight: 800; color: var(--primary); font-style: normal; }
+    /* ════════════════════════════════════════
+       MODAL LOGIN
+    ════════════════════════════════════════ */
+    .login-overlay {
+      display: none; position: fixed; inset: 0; z-index: 2000;
+      background: rgba(12,26,46,0.7); backdrop-filter: blur(8px);
+      align-items: center; justify-content: center; padding: 20px;
+    }
+    .login-overlay.open { display: flex; }
+
+    .login-box {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      width: 100%; max-width: 420px;
+      box-shadow: 0 32px 80px rgba(12,26,46,0.25);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .login-header {
+      background: var(--navy);
+      padding: 28px 32px 24px;
+      position: relative;
+      overflow: hidden;
+    }
+    .login-header::before {
+      content: ''; position: absolute;
+      right: -40px; top: -40px;
+      width: 140px; height: 140px;
+      border-radius: 50%;
+      background: rgba(29,110,234,0.15);
+    }
+    .login-brand { font-size: 1rem; font-weight: 800; color: var(--white); margin-bottom: 4px; }
+    .login-brand span { color: var(--primary-light); }
+    .login-subtitle { font-size: 0.75rem; color: rgba(255,255,255,0.45); letter-spacing: 0.3px; }
+
+    .login-body { padding: 28px 32px 32px; }
+
+    .login-tabs {
+      display: flex; gap: 0;
+      border: 1.5px solid var(--border);
+      border-radius: 10px; overflow: hidden;
+      margin-bottom: 24px;
+    }
+    .login-tab {
+      flex: 1; padding: 9px 12px;
+      font-size: 0.8rem; font-weight: 600;
+      text-align: center; cursor: pointer;
+      color: var(--gray-400);
+      background: var(--bg);
+      border: none; transition: all 0.2s;
+    }
+    .login-tab.active {
+      background: var(--navy);
+      color: var(--white);
+    }
+
+    .login-fields { display: flex; flex-direction: column; gap: 10px; margin-bottom: 16px; }
+
+    .login-input {
+      width: 100%; padding: 13px 16px;
+      background: var(--bg);
+      border: 1.5px solid var(--border);
+      border-radius: 10px;
+      font-size: 0.9rem; font-family: 'Inter', sans-serif;
+      color: var(--text); outline: none;
+      transition: border-color 0.2s, background 0.2s;
+    }
+    .login-input::placeholder { color: var(--gray-600); }
+    .login-input:focus { border-color: rgba(29,110,234,0.45); background: var(--white); }
+
+    .login-submit {
+      width: 100%; padding: 14px;
+      background: var(--navy); color: var(--white);
+      font-size: 0.95rem; font-weight: 700;
+      border: none; border-radius: 50px; cursor: pointer;
+      transition: opacity 0.2s, transform 0.2s;
+      box-shadow: 0 4px 18px rgba(12,26,46,0.22);
+    }
+    .login-submit:hover { opacity: 0.88; transform: translateY(-1px); }
+    .login-submit:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
+
+    .login-forgot {
+      text-align: center; margin-top: 12px;
+      font-size: 0.75rem; color: var(--gray-400);
+    }
+    .login-forgot a { color: var(--primary); text-decoration: none; font-weight: 600; }
+    .login-forgot a:hover { text-decoration: underline; }
+
+    .login-divider {
+      display: flex; align-items: center; gap: 12px;
+      margin: 20px 0; font-size: 0.72rem; color: var(--gray-600);
+    }
+    .login-divider::before, .login-divider::after {
+      content: ''; flex: 1; height: 1px; background: var(--border);
+    }
+
+    .login-investor-link {
+      display: block; text-align: center; padding: 11px;
+      border: 1.5px solid var(--border); border-radius: 50px;
+      font-size: 0.82rem; font-weight: 600; color: var(--text);
+      text-decoration: none; cursor: pointer;
+      transition: border-color 0.2s, background 0.2s;
+      background: none;
+      width: 100%;
+    }
+    .login-investor-link:hover { border-color: rgba(29,110,234,0.35); background: rgba(29,110,234,0.04); }
+
+    .login-error {
+      display: none;
+      background: rgba(220,38,38,0.07);
+      border: 1px solid rgba(220,38,38,0.2);
+      border-radius: 8px; padding: 10px 14px;
+      font-size: 0.78rem; color: #991b1b;
+      margin-bottom: 12px;
+    }
+    .login-success-msg {
+      display: none; text-align: center; padding: 16px 0 4px;
+    }
+    .login-success-msg p { font-size: 0.88rem; color: var(--text-muted); line-height: 1.6; }
+    .login-success-msg strong { color: var(--text); }
+
+    .login-close {
+      position: absolute; top: 14px; right: 16px;
+      background: rgba(255,255,255,0.1); border: none;
+      color: rgba(255,255,255,0.6); font-size: 1rem;
+      width: 28px; height: 28px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      cursor: pointer; transition: background 0.2s, color 0.2s;
+    }
+    .login-close:hover { background: rgba(255,255,255,0.18); color: var(--white); }
   </style>
 </head>
 <body>
@@ -696,14 +898,15 @@
       <li><a href="#how">Cómo funciona</a></li>
       <li><a href="#waitlist">Contacto</a></li>
     </ul>
-    <a class="nav-cta" href="#waitlist">Quiero acceso →</a>
+    <a class="nav-cta" href="#" onclick="abrirLogin(); return false;">Ingresar →</a>
   </nav>
 
   <!-- HERO -->
   <section id="hero">
+    <img class="hero-watermark" src="logo.svg" alt="">
     <div class="badge" onclick="abrirModal()">
       <span class="badge-dot"></span>
-      Ahora en acceso anticipado
+      Solo 5 cupos fundadores
     </div>
 
     <h1>Automatizá tu negocio<br><span class="grad">con la potencia de la Tecnología</span></h1>
@@ -714,7 +917,7 @@
     </p>
 
     <div class="hero-actions">
-      <a href="#waitlist" class="btn-primary">Quiero acceso anticipado</a>
+      <a href="propuesta_comercial.html" target="_blank" class="btn-primary">Quiero mi cupo fundador →</a>
       <a href="#how" class="btn-secondary">¿Cómo funciona?</a>
     </div>
 
@@ -749,45 +952,97 @@
 
   <!-- FEATURES -->
   <section id="features" class="section-wrapper">
-    <div style="max-width:1140px; margin:0 auto; padding:100px 24px;">
+    <div style="max-width:1140px; margin:0 auto; padding:100px 24px 80px;">
+
       <div class="features-header">
         <span class="section-label">Características</span>
-        <h2 class="section-title">Todo para automatizar<br>con inteligencia artificial</h2>
-        <p class="section-sub">Una plataforma completa para que tu equipo deje de perder tiempo en lo que una IA puede hacer mejor.</p>
+        <h2 class="section-title">Dos productos.<br>Una sola solución para tu PyME.</h2>
+        <p class="section-sub">Software de gestión modular propio y automatización con agentes de IA. Diseñado para la realidad operativa de las PyMEs argentinas — sin complicaciones, sin código, sin excusas.</p>
+      </div>
+
+      <!-- ── GRUPO 1: SOFTWARE ── -->
+      <div class="feat-group">
+        <span class="feat-group-tag">Producto 1</span>
+        <h3 class="feat-group-title">Edgy Gestión — Software de Gestión Modular</h3>
+        <p class="feat-group-sub">Sistema propio con indicadores de salud financiera. Contratás el módulo que necesitás hoy y activás los demás cuando tu negocio los pida. Sin pagar por lo que no usás.</p>
       </div>
 
       <div class="features-grid">
         <div class="feature-card">
-          <div class="feature-icon fi-1">⚡</div>
-          <h3>Agentes autónomos</h3>
-          <p>Desplegá agentes de IA que trabajan de forma independiente, toman decisiones y completan tareas complejas sin intervención manual.</p>
+          <div class="feature-icon fi-1"></div>
+          <h3>Tesorería</h3>
+          <p>Seguimiento de ingresos y egresos, reservas líquidas en tiempo real e indicadores de salud financiera. Sabés exactamente cuánto tenés, cuánto debés y cuánto podés comprometer.</p>
         </div>
         <div class="feature-card">
-          <div class="feature-icon fi-2">🔗</div>
-          <h3>Integraciones nativas</h3>
-          <p>Conectá con Slack, Notion, HubSpot, Gmail y más. Sin código, sin fricción, en minutos.</p>
+          <div class="feature-icon fi-2"></div>
+          <h3>Artículos y Stock</h3>
+          <p>Control de inventario actualizado al instante. Alertas automáticas cuando el stock llega al mínimo. Nunca más te quedás sin mercadería sin saberlo.</p>
         </div>
         <div class="feature-card">
-          <div class="feature-icon fi-3">📊</div>
-          <h3>Analítica en tiempo real</h3>
-          <p>Medí el impacto de cada automatización con dashboards claros. Entendé exactamente cuánto tiempo y dinero estás ahorrando.</p>
+          <div class="feature-icon fi-3"></div>
+          <h3>Ventas</h3>
+          <p>Registro de operaciones, historial por cliente y métricas de desempeño comercial. Todo lo que necesitás para entender cómo está vendiendo tu negocio.</p>
         </div>
         <div class="feature-card">
-          <div class="feature-icon fi-4">🛡️</div>
-          <h3>Seguridad empresarial</h3>
-          <p>Encriptación end-to-end, auditoría completa de acciones y cumplimiento de normativas internacionales.</p>
+          <div class="feature-icon fi-4"></div>
+          <h3>Compras</h3>
+          <p>Gestión de proveedores y órdenes de compra. Conciliá automáticamente lo que ingresa contra lo que pagás. Eliminá errores y diferencias sin buscarlos a mano.</p>
         </div>
         <div class="feature-card">
-          <div class="feature-icon fi-5">🎯</div>
-          <h3>Sin curva de aprendizaje</h3>
-          <p>Interface visual e intuitiva. Cualquier miembro del equipo puede crear y gestionar automatizaciones desde el día uno.</p>
+          <div class="feature-icon fi-5"></div>
+          <h3>Dashboard Gerencial</h3>
+          <p>Todos los indicadores clave en una sola pantalla. De un vistazo sabés cómo está tu negocio hoy — sin abrir planillas ni pedirle reportes a nadie.</p>
         </div>
         <div class="feature-card">
-          <div class="feature-icon fi-6">🚀</div>
-          <h3>Escalable desde el inicio</h3>
-          <p>Empezá con un proceso, escalá a cientos. La plataforma crece con vos sin cambios de arquitectura ni costos ocultos.</p>
+          <div class="feature-icon fi-6"></div>
+          <h3>Arquitectura Modular</h3>
+          <p>Cada módulo funciona solo o en conjunto con los demás. Empezás con lo urgente y crecés sin cambiar de sistema ni perder la historia de tu negocio.</p>
         </div>
       </div>
+
+      <!-- ── DIVIDER ── -->
+      <div class="feat-divider"></div>
+
+      <!-- ── GRUPO 2: AUTOMATIZACIÓN ── -->
+      <div class="feat-group">
+        <span class="feat-group-tag">Producto 2</span>
+        <h3 class="feat-group-title">Edgy Automatiza — Agentes de IA y Procesos</h3>
+        <p class="feat-group-sub">Analizamos los procesos repetitivos de tu negocio y los automatizamos con nuestra plataforma de agentes de inteligencia artificial. Configuramos una vez — la IA trabaja para siempre.</p>
+      </div>
+
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon fi-1"></div>
+          <h3>Agentes de IA Personalizados</h3>
+          <p>Agentes entrenados para tu negocio específico. Responden consultas, procesan información, ejecutan tareas y toman decisiones — sin que tengas que pedírselo cada vez.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon fi-2"></div>
+          <h3>Flujos Automatizados</h3>
+          <p>Conectamos tus herramientas y creamos flujos que trabajan solos. Una venta genera una factura, avisa al depósito y actualiza el stock. Automático, siempre.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon fi-3"></div>
+          <h3>WhatsApp como canal operativo</h3>
+          <p>Notificaciones automáticas a tu equipo y clientes. Alertas de stock crítico, confirmaciones de pedido, recordatorios de cobro — directo al WhatsApp, sin intervención humana.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon fi-4"></div>
+          <h3>Reportes que se envían solos</h3>
+          <p>Informes diarios, semanales o mensuales generados y enviados automáticamente. Vos definís qué datos querés ver y a quién llegan — el sistema hace el resto.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon fi-5"></div>
+          <h3>Integración con lo que ya usás</h3>
+          <p>Gmail, Google Sheets, Mercado Libre, sistemas de facturación, bancos. Conectamos lo que ya existe en tu negocio para que todo hable con todo.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon fi-6"></div>
+          <h3>Automatización a medida</h3>
+          <p>Cada PyME tiene procesos distintos. Analizamos los tuyos, identificamos lo que más tiempo quita y lo automatizamos. Vos nos contás cómo trabajás — nosotros lo convertimos en código.</p>
+        </div>
+      </div>
+
     </div>
   </section>
 
@@ -819,6 +1074,60 @@
           <p>EDGY Sistemas aprende de cada ejecución y sugiere mejoras continuas para maximizar tu eficiencia.</p>
         </div>
       </div>
+
+      <!-- EXAMPLES -->
+      <div class="examples-intro">
+        <span class="section-label">Ejemplos reales</span>
+        <h3 style="font-size:1.3rem; font-weight:800; color:var(--text); letter-spacing:-0.5px; margin-top:8px; margin-bottom:6px;">Lo que el sistema hace por vos — todos los días</h3>
+        <p style="font-size:0.88rem; color:var(--text-muted); max-width:520px;">Sin que lo pidas, sin que lo configures cada vez. Una vez armado, trabaja solo.</p>
+      </div>
+
+      <div class="examples-grid">
+
+        <div class="example-card">
+          <span class="example-tag">Finanzas</span>
+          <h4>Alerta de liquidez</h4>
+          <p>Todos los días a las 8am el sistema revisa saldos, cheques por vencer y pagos programados. Si en 7 días no alcanza la plata, el dueño recibe un aviso inmediato.</p>
+          <div class="example-quote">Atención: el jueves necesitás $340.000 para cubrir pagos y solo tenés $280.000 disponible.</div>
+        </div>
+
+        <div class="example-card">
+          <span class="example-tag">Cobranzas</span>
+          <h4>Cobranza automática</h4>
+          <p>Cuando una cuenta corriente supera los 30 días, el cliente recibe un mensaje amable con su estado de cuenta. A los 45 días, uno más firme. A los 60, el dueño recibe una alerta directa.</p>
+          <div class="example-quote">Hola, te recordamos que tenés una factura pendiente desde hace 32 días. Adjuntamos tu estado de cuenta actualizado.</div>
+        </div>
+
+        <div class="example-card">
+          <span class="example-tag">Operaciones</span>
+          <h4>Resumen diario automático</h4>
+          <p>Todas las noches el sistema arma el resumen del día — ingresos, egresos, saldo y cheques cobrados — y se lo envía al dueño por WhatsApp o email. Sin que nadie toque nada.</p>
+          <div class="example-quote">Resumen del martes: ingresos $420.000 · egresos $185.000 · saldo disponible $1.240.000 · 3 cheques cobrados.</div>
+        </div>
+
+        <div class="example-card">
+          <span class="example-tag">Logística</span>
+          <h4>Rendición de repartidor</h4>
+          <p>Cuando el repartidor cierra su ruta desde el celular, el sistema verifica automáticamente que los números cierren. Si hay diferencia, el cajero recibe un aviso antes de que llegue el efectivo.</p>
+          <div class="example-quote">Ruta 3 cerrada. Diferencia detectada: $2.400 entre cobros declarados y monto recibido. Pendiente de verificación.</div>
+        </div>
+
+        <div class="example-card">
+          <span class="example-tag">Inteligencia artificial</span>
+          <h4>Agente conversacional</h4>
+          <p>El dueño le escribe una pregunta por WhatsApp y el sistema consulta saldos, pagos pendientes y stock antes de responder. Como tener un contador disponible las 24 horas.</p>
+          <div class="example-quote">Sí, tenés margen para la compra. Pero el jueves vencen dos cheques por $180.000 — te quedarías muy justo. ¿Querés que lo programe para la semana siguiente?</div>
+        </div>
+
+        <div class="example-card">
+          <span class="example-tag">Control</span>
+          <h4>Detección de anomalías</h4>
+          <p>La inteligencia artificial analiza los movimientos del día y detecta patrones inusuales. Un egreso que no cierra, un proveedor que cobró dos veces, una caja con diferencia — el sistema lo ve antes que vos.</p>
+          <div class="example-quote">Anomalía detectada: el proveedor Distribuidora Norte registra dos pagos hoy por el mismo importe ($87.500). Revisá antes de confirmar.</div>
+        </div>
+
+      </div>
+
     </div>
   </section>
 
@@ -853,6 +1162,48 @@
   </footer>
 
   <!-- ═══════════════════════════════════════════
+       MODAL LOGIN
+  ═══════════════════════════════════════════ -->
+  <div class="login-overlay" id="loginOverlay" onclick="cerrarLoginSiOverlay(event)">
+    <div class="login-box" id="loginBox">
+
+      <div class="login-header">
+        <button class="login-close" onclick="cerrarLogin()">✕</button>
+        <div class="login-brand"><span>EDGY</span> Sistemas</div>
+        <div class="login-subtitle">Acceso para clientes e inversores registrados</div>
+      </div>
+
+      <div class="login-body">
+
+        <!-- ERROR -->
+        <div class="login-error" id="loginError"></div>
+
+        <!-- FORM -->
+        <div id="loginFormWrap">
+          <div class="login-fields">
+            <input type="email" class="login-input" id="loginEmail" placeholder="Email" />
+            <input type="password" class="login-input" id="loginPass" placeholder="Contraseña" />
+          </div>
+
+          <button class="login-submit" id="loginBtn" onclick="hacerLogin()">
+            Ingresar →
+          </button>
+
+          <div class="login-forgot">
+            <a href="#" onclick="olvidéContraseña(); return false;">¿Olvidaste tu contraseña?</a>
+          </div>
+        </div>
+
+        <!-- SUCCESS -->
+        <div class="login-success-msg" id="loginSuccessMsg">
+          <p>Redirigiendo a tu cuenta…</p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════
        MODAL INVERSORES
   ═══════════════════════════════════════════ -->
   <div class="m-overlay" id="mOverlay" onclick="cerrarSiOverlay(event)">
@@ -869,14 +1220,28 @@
 
         <div class="tier-grid" id="tierGrid"></div>
 
-        <button class="m-btn-next" id="mBtnNext" onclick="irADocumento()">
+        <button class="m-btn-next" id="mBtnNext" onclick="irAPlazo()">
+          Elegir plazo →
+        </button>
+      </div>
+
+      <!-- STEP 2: Selector de plazo -->
+      <div class="m-step" id="mStep2">
+        <button class="m-back" onclick="volverASelector()">← Cambiar monto</button>
+        <div class="m-head">
+          <div class="m-pill">Paso 2 — Plazo</div>
+          <h2 class="m-title">Elegí el plazo</h2>
+          <p class="m-sub" id="mSubPlazo">Seleccioná en cuántos meses preferís recibir tu retorno.</p>
+        </div>
+        <div class="plazo-grid" id="plazoGrid"></div>
+        <button class="m-btn-next" id="mBtnPlazo" onclick="irADocumento()">
           Ver mi Ticket →
         </button>
       </div>
 
-      <!-- STEP 2: Documento + Formulario -->
-      <div class="m-step" id="mStep2">
-        <button class="m-back" onclick="volverASelector()">← Cambiar monto</button>
+      <!-- STEP 3: Documento + Formulario -->
+      <div class="m-step" id="mStep3">
+        <button class="m-back" onclick="volverAPlazo()">← Cambiar plazo</button>
 
         <!-- TICKET DOC -->
         <div class="tk-doc">
@@ -898,8 +1263,8 @@
               <div class="tk-ml">Retorno</div>
             </div>
             <div class="tk-metric">
-              <div class="tk-mv b">36 meses</div>
-              <div class="tk-ml">Plazo máximo</div>
+              <div class="tk-mv b" id="tkPlazo">—</div>
+              <div class="tk-ml">Plazo elegido</div>
             </div>
           </div>
 
@@ -930,7 +1295,8 @@
               <div class="tk-row"><span class="l">Inversión</span><span class="v" id="condMonto">—</span></div>
               <div class="tk-row"><span class="l">Retorno total</span><span class="v" id="condRetorno">—</span></div>
               <div class="tk-row"><span class="l">Mecanismo</span><span class="v">% de ingresos mensuales</span></div>
-              <div class="tk-row"><span class="l">Plazo máximo</span><span class="v">36 meses</span></div>
+              <div class="tk-row"><span class="l">Plazo elegido</span><span class="v" id="condPlazo">—</span></div>
+              <div class="tk-row"><span class="l">Cuota mensual est.</span><span class="v" id="condCuota">—</span></div>
               <div class="tk-row"><span class="l">Renovación</span><span class="v">Posible al vencimiento</span></div>
               <div class="tk-row"><span class="l">Cancelación</span><span class="v">60 días de aviso</span></div>
             </div>
@@ -965,6 +1331,7 @@
     </div>
   </div>
 
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
   <script>
     // ── Waitlist form original ──
     function handleSubmit(e) {
@@ -975,16 +1342,145 @@
 
     window.addEventListener('scroll', () => {
       document.querySelector('nav').style.boxShadow =
-        window.scrollY > 20 ? '0 4px 32px rgba(0,0,0,0.4)' : 'none';
+        window.scrollY > 20 ? '0 4px 32px rgba(12,26,46,0.12)' : 'none';
     });
+
+    // ══════════════════════════════════════════
+    // MODAL LOGIN
+    // ══════════════════════════════════════════
+
+    // ── Supabase config — proyecto real (mismo que usa edgy-gestion) ──
+    const SB_URL = 'https://ipnufyqwbjbocsezdkiw.supabase.co';
+    const SB_KEY = 'sb_publishable_DhVxAUvXYsa6YyFBUim42w_N4lXQ44C'; // ← Supabase: Settings → API → anon public
+
+    // ── Sesión compartida entre edgysistemas.tech y sus subdominios ──
+    // Mismo storage que usa edgy-gestion (src/lib/storageCompartido.ts) —
+    // tiene que ser exactamente el mismo mecanismo en los dos lados para
+    // que la sesión iniciada acá se vea desde panel.edgysistemas.tech.
+    const DOMINIO_COOKIE = window.location.hostname.endsWith('edgysistemas.tech')
+      ? '.edgysistemas.tech'
+      : undefined;
+
+    function leerCookie(nombre) {
+      const m = document.cookie.match(new RegExp(`(?:^|; )${nombre}=([^;]*)`));
+      return m ? decodeURIComponent(m[1]) : null;
+    }
+    function escribirCookie(nombre, valor) {
+      const partes = [`${nombre}=${encodeURIComponent(valor)}`, 'path=/', 'max-age=31536000', 'SameSite=Lax'];
+      if (DOMINIO_COOKIE) partes.push(`Domain=${DOMINIO_COOKIE}`);
+      if (window.location.protocol === 'https:') partes.push('Secure');
+      document.cookie = partes.join('; ');
+    }
+    function borrarCookie(nombre) {
+      const partes = [`${nombre}=`, 'path=/', 'max-age=0'];
+      if (DOMINIO_COOKIE) partes.push(`Domain=${DOMINIO_COOKIE}`);
+      document.cookie = partes.join('; ');
+    }
+
+    // Cliente real de Supabase Auth, con la cookie compartida en vez del
+    // localStorage por defecto del SDK.
+    const supabaseClient = window.supabase.createClient(SB_URL, SB_KEY, {
+      auth: {
+        storage: {
+          getItem: (k) => leerCookie(k),
+          setItem: (k, v) => escribirCookie(k, v),
+          removeItem: (k) => borrarCookie(k),
+        },
+      },
+    });
+
+    // Destino post-login. Hoy todo el que se loguea es personal de Edgy
+    // (el dashboard del cliente final todavía no existe) — cuando exista,
+    // esto se reemplaza por una lógica que mire el rol antes de decidir
+    // a dónde mandar a cada uno.
+    const APP_URL = 'https://panel.edgysistemas.tech';
+
+    function abrirLogin() {
+      document.getElementById('loginOverlay').classList.add('open');
+      document.body.style.overflow = 'hidden';
+      setTimeout(() => document.getElementById('loginEmail').focus(), 100);
+    }
+
+    function cerrarLogin() {
+      document.getElementById('loginOverlay').classList.remove('open');
+      document.body.style.overflow = '';
+      document.getElementById('loginError').style.display = 'none';
+      document.getElementById('loginFormWrap').style.display = 'block';
+      document.getElementById('loginSuccessMsg').style.display = 'none';
+      document.getElementById('loginBtn').disabled = false;
+      document.getElementById('loginBtn').textContent = 'Ingresar →';
+    }
+
+    function cerrarLoginSiOverlay(e) {
+      if (e.target === document.getElementById('loginOverlay')) cerrarLogin();
+    }
+
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape') { cerrarLogin(); cerrarModal(); }
+    });
+
+    async function hacerLogin() {
+      const email = document.getElementById('loginEmail').value.trim();
+      const pass  = document.getElementById('loginPass').value;
+      const err   = document.getElementById('loginError');
+      const btn   = document.getElementById('loginBtn');
+
+      err.style.display = 'none';
+
+      if (!email || !pass) {
+        err.textContent = 'Por favor completá email y contraseña.';
+        err.style.display = 'block';
+        return;
+      }
+
+      btn.disabled = true;
+      btn.textContent = 'Verificando...';
+
+      try {
+        const { data, error } = await supabaseClient.auth.signInWithPassword({
+          email,
+          password: pass,
+        });
+
+        if (!error && data.session) {
+          document.getElementById('loginFormWrap').style.display = 'none';
+          document.getElementById('loginSuccessMsg').style.display = 'block';
+          setTimeout(() => { window.location.href = APP_URL; }, 1200);
+        } else {
+          throw new Error(error?.message || 'Credenciales incorrectas.');
+        }
+
+      } catch (e) {
+        err.textContent = e.message || 'No pudimos verificar tus datos. Intentá de nuevo.';
+        err.style.display = 'block';
+        btn.disabled = false;
+        btn.textContent = 'Ingresar →';
+      }
+    }
+
+    async function olvidéContraseña() {
+      const email = document.getElementById('loginEmail').value.trim();
+      const err   = document.getElementById('loginError');
+      if (!email) {
+        err.textContent = 'Ingresá tu email primero y luego hacé click en este enlace.';
+        err.style.display = 'block';
+        return;
+      }
+      try {
+        await supabaseClient.auth.resetPasswordForEmail(email);
+        err.style.cssText += ';background:rgba(29,110,234,0.07);border-color:rgba(29,110,234,0.2);color:var(--primary-dark)';
+        err.textContent = `Te enviamos un email a ${email} para restablecer tu contraseña.`;
+        err.style.display = 'block';
+      } catch { /* silencioso */ }
+    }
 
     // ══════════════════════════════════════════
     // MODAL INVERSORES
     // ══════════════════════════════════════════
 
-    // ── Supabase config (reemplazá con tus credenciales) ──
-    const SB_URL = 'TU_SUPABASE_URL';   // ← ej: https://xxxx.supabase.co
-    const SB_KEY = 'TU_ANON_KEY';        // ← anon public key
+    // ── Supabase config: reutiliza SB_URL y SB_KEY ya definidas arriba,
+    // junto al modal de login — es el mismo proyecto, no hace falta
+    // declararlas dos veces.
 
     // ── Tramos disponibles ──
     const TIERS = [
@@ -1009,13 +1505,12 @@
     (function buildGrid() {
       const grid = document.getElementById('tierGrid');
       TIERS.forEach(t => {
-        const ret = Math.round(t.monto * 1.4);
         const card = document.createElement('div');
         card.className = 't-card';
         card.dataset.monto = t.monto;
         card.innerHTML = `
           <div class="t-monto">${fmt(t.monto)}</div>
-          <div class="t-ret">→ ${fmt(ret)}</div>
+          <div class="t-ret">2 % mensual</div>
           <div class="t-cupo"><span class="t-dot"></span>${t.cupo} cupos</div>
         `;
         card.addEventListener('click', () => selTier(t.monto, card));
@@ -1028,29 +1523,94 @@
       card.classList.add('sel');
       montoSel = monto;
       const btn = document.getElementById('mBtnNext');
-      btn.textContent = `Ver mi Ticket de ${fmt(monto)} →`;
+      btn.textContent = `Elegir plazo para ${fmt(monto)} →`;
       btn.classList.add('vis');
     }
 
-    function irADocumento() {
-      if (!montoSel) return;
-      const ret = Math.round(montoSel * 1.4);
-      document.getElementById('tkMonto').textContent    = fmt(montoSel);
-      document.getElementById('flowMonto').textContent  = fmt(montoSel);
-      document.getElementById('flowRetorno').textContent= fmt(ret);
-      document.getElementById('condMonto').textContent  = fmt(montoSel);
-      document.getElementById('condRetorno').textContent= `${fmt(ret)} (40 %)`;
-      document.getElementById('btnMonto').textContent   = fmt(montoSel);
-      document.getElementById('mStep1').classList.remove('active');
-      document.getElementById('mStep2').classList.add('active');
+    // ── Step 2: Plazo cards ──
+    const PLAZOS = [
+      { meses: 18, desc: 'Retorno más rápido'  },
+      { meses: 24, desc: 'Plazo intermedio'     },
+      { meses: 36, desc: 'Cuota más accesible'  },
+    ];
+
+    let plazoSel = null;
+
+    (function buildPlazoGrid() {
+      const grid = document.getElementById('plazoGrid');
+      PLAZOS.forEach(p => {
+        const card = document.createElement('div');
+        card.className = 'p-card';
+        card.dataset.meses = p.meses;
+        card.innerHTML = `
+          <div class="p-meses">${p.meses}</div>
+          <div class="p-label">meses</div>
+          <div class="p-divider"></div>
+          <div class="p-cuota" id="pCuota${p.meses}">—</div>
+          <div class="p-desc">${p.desc}</div>
+        `;
+        card.addEventListener('click', () => selPlazo(p.meses, card));
+        grid.appendChild(card);
+      });
+    })();
+
+    function selPlazo(meses, card) {
+      document.querySelectorAll('.p-card').forEach(c => c.classList.remove('sel'));
+      card.classList.add('sel');
+      plazoSel = meses;
+      const btn = document.getElementById('mBtnPlazo');
+      btn.textContent = `Ver mi Ticket — ${meses} meses →`;
+      btn.classList.add('vis');
+    }
+
+    // ── Navegación ──
+    function goToStep(id) {
+      document.querySelectorAll('.m-step').forEach(s => s.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
       document.getElementById('mBox').scrollTop = 0;
     }
 
-    function volverASelector() {
-      document.getElementById('mStep2').classList.remove('active');
-      document.getElementById('mStep1').classList.add('active');
-      document.getElementById('mBox').scrollTop = 0;
+    function irAPlazo() {
+      if (!montoSel) return;
+      PLAZOS.forEach(p => {
+        const retorno = Math.round(montoSel * (1 + 0.02 * p.meses));
+        const cuota   = Math.round(retorno / p.meses);
+        const el = document.getElementById('pCuota' + p.meses);
+        if (el) el.textContent = `${fmt(retorno)} · ~${fmt(cuota)}/mes`;
+      });
+      const rMin = Math.round(montoSel * (1 + 0.02 * 18));
+      const rMax = Math.round(montoSel * (1 + 0.02 * 36));
+      document.getElementById('mSubPlazo').innerHTML =
+        `Con <strong style="color:var(--primary-light)">${fmt(montoSel)}</strong> recibís entre
+         <strong style="color:var(--primary-light)">${fmt(rMin)}</strong> y
+         <strong style="color:var(--primary-light)">${fmt(rMax)}</strong> según el plazo.`;
+      document.querySelectorAll('.p-card').forEach(c => c.classList.remove('sel'));
+      plazoSel = null;
+      const btn = document.getElementById('mBtnPlazo');
+      btn.textContent = 'Ver mi Ticket →';
+      btn.classList.remove('vis');
+      goToStep('mStep2');
     }
+
+    function irADocumento() {
+      if (!plazoSel) return;
+      const retorno = Math.round(montoSel * (1 + 0.02 * plazoSel));
+      const cuota   = Math.round(retorno / plazoSel);
+      const pct     = plazoSel * 2;
+      document.getElementById('tkMonto').textContent     = fmt(montoSel);
+      document.getElementById('tkPlazo').textContent     = plazoSel + ' meses';
+      document.getElementById('flowMonto').textContent   = fmt(montoSel);
+      document.getElementById('flowRetorno').textContent = fmt(retorno);
+      document.getElementById('condMonto').textContent   = fmt(montoSel);
+      document.getElementById('condRetorno').textContent = `${fmt(retorno)} (${pct} %)`;
+      document.getElementById('condPlazo').textContent   = plazoSel + ' meses';
+      document.getElementById('condCuota').textContent   = '~' + fmt(cuota) + '/mes';
+      document.getElementById('btnMonto').textContent    = fmt(montoSel);
+      goToStep('mStep3');
+    }
+
+    function volverASelector() { goToStep('mStep1'); }
+    function volverAPlazo()    { goToStep('mStep2'); }
 
     function abrirModal() {
       document.getElementById('mOverlay').classList.add('open');
@@ -1085,7 +1645,8 @@
       btn.disabled = true;
       btn.textContent = 'Registrando...';
 
-      const retorno = Math.round(montoSel * 1.4);
+      const retorno = Math.round(montoSel * (1 + 0.02 * plazoSel));
+      const cuota   = Math.round(retorno / plazoSel);
 
       try {
         const res = await fetch(`${SB_URL}/rest/v1/tickets_inversores`, {
@@ -1098,9 +1659,11 @@
           },
           body: JSON.stringify({
             nombre, whatsapp, email,
-            monto: montoSel,
+            monto:         montoSel,
             retorno,
-            estado: 'pendiente'
+            plazo:         plazoSel,
+            cuota_mensual: cuota,
+            estado:        'pendiente'
           })
         });
 

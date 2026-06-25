@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Propuesta Comercial — EDGY Sistemas</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --navy:   #031834;
+  --navy2:  #041f42;
+  --green:  #67c87c;
+  --green2: #4db36a;
+  --green3: #85d496;
+  --white:  #ffffff;
+  --off:    #f7f9fc;
+  --text:   #111827;
+  --muted:  #6b7280;
+  --border: #e5e7eb;
+  --r:      14px;
+}
+
+html { scroll-behavior: smooth; }
+body { font-family: 'Inter', sans-serif; background: var(--off); color: var(--text); line-height: 1.6; }
+
+/* ── HEADER ── */
+.header {
+  background: var(--navy);
+  padding: 28px 48px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky; top: 0; z-index: 100;
+  box-shadow: 0 2px 24px rgba(0,0,0,0.3);
+}
+.logo { font-size: 1.1rem; font-weight: 800; color: var(--white); letter-spacing: -0.3px; }
+.logo span { color: var(--green); }
+.header-right { text-align: right; }
+.header-label { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 2px; color: rgba(255,255,255,0.4); }
+.header-title { font-size: 0.9rem; font-weight: 600; color: var(--white); margin-top: 1px; }
+
+/* ── HERO BAND ── */
+.hero {
+  background: linear-gradient(135deg, var(--navy) 0%, var(--navy2) 100%);
+  padding: 60px 48px 56px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  width: 500px; height: 500px;
+  border-radius: 50%;
+  background: rgba(103,200,124,0.07);
+  top: -200px; right: -100px;
+}
+.hero::after {
+  content: '';
+  position: absolute;
+  width: 300px; height: 300px;
+  border-radius: 50%;
+  background: rgba(103,200,124,0.05);
+  bottom: -100px; left: -50px;
+}
+.hero-eyebrow {
+  display: inline-block;
+  background: rgba(103,200,124,0.12);
+  border: 1px solid rgba(103,200,124,0.3);
+  color: var(--green3);
+  font-size: 0.7rem; font-weight: 700;
+  letter-spacing: 2.5px; text-transform: uppercase;
+  padding: 5px 16px; border-radius: 50px;
+  margin-bottom: 18px;
+  position: relative; z-index: 1;
+}
+.hero h1 {
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  font-weight: 900; letter-spacing: -1px; line-height: 1.1;
+  color: var(--white); margin-bottom: 14px;
+  position: relative; z-index: 1;
+}
+.hero h1 em { font-style: normal; color: var(--green); }
+.hero p {
+  font-size: 1rem; color: rgba(255,255,255,0.55);
+  max-width: 520px; margin: 0 auto;
+  position: relative; z-index: 1;
+}
+
+/* ── WRAPPER ── */
+.wrap { max-width: 1000px; margin: 0 auto; padding: 0 24px; }
+
+/* ── SECTION ── */
+.section { padding: 56px 0; }
+.section-label {
+  display: inline-block;
+  font-size: 0.68rem; font-weight: 700;
+  text-transform: uppercase; letter-spacing: 2px;
+  color: var(--green2);
+  background: rgba(103,200,124,0.1);
+  border: 1px solid rgba(103,200,124,0.25);
+  padding: 3px 12px; border-radius: 50px;
+  margin-bottom: 10px;
+}
+.section-title {
+  font-size: clamp(1.3rem, 3vw, 1.9rem);
+  font-weight: 900; letter-spacing: -0.8px;
+  color: var(--navy); margin-bottom: 6px;
+}
+.section-sub { font-size: 0.9rem; color: var(--muted); max-width: 520px; }
+
+/* ── DIVIDER ── */
+.divider { border: none; border-top: 1px solid var(--border); }
+
+/* ── PLAN CARDS ── */
+.plans { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 36px; }
+
+.plan {
+  background: var(--white);
+  border: 1.5px solid var(--border);
+  border-radius: var(--r);
+  padding: 28px 24px;
+  position: relative;
+  transition: box-shadow 0.2s, border-color 0.2s;
+}
+.plan:hover { box-shadow: 0 8px 32px rgba(3,24,52,0.08); border-color: rgba(103,200,124,0.4); }
+
+.plan.featured {
+  border-color: var(--green);
+  box-shadow: 0 8px 40px rgba(103,200,124,0.2);
+}
+.plan-badge {
+  position: absolute; top: -12px; left: 50%; transform: translateX(-50%);
+  background: var(--green); color: var(--navy);
+  font-size: 0.62rem; font-weight: 800;
+  text-transform: uppercase; letter-spacing: 1.5px;
+  padding: 3px 12px; border-radius: 50px;
+  white-space: nowrap;
+}
+.plan-name { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: var(--muted); margin-bottom: 6px; }
+.plan-price {
+  font-size: 2.2rem; font-weight: 900;
+  letter-spacing: -1.5px; color: var(--navy);
+  line-height: 1;
+}
+.plan-price sup { font-size: 1rem; font-weight: 700; vertical-align: super; letter-spacing: 0; }
+.plan-price sub { font-size: 0.75rem; font-weight: 500; color: var(--muted); vertical-align: baseline; letter-spacing: 0; }
+.plan-setup { font-size: 0.75rem; color: var(--muted); margin-top: 4px; }
+.plan-divider { border: none; border-top: 1px solid var(--border); margin: 18px 0; }
+.plan-features { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+.plan-features li { font-size: 0.82rem; color: var(--text); display: flex; align-items: flex-start; gap: 8px; }
+.plan-features li::before { content: '✓'; color: var(--green2); font-weight: 700; flex-shrink: 0; margin-top: 1px; }
+.plan-features li.muted { color: var(--muted); }
+.plan-features li.muted::before { content: '—'; color: var(--border); }
+
+/* ── AUTOMATION TABLE ── */
+.auto-table { width: 100%; border-collapse: collapse; margin-top: 28px; background: var(--white); border-radius: var(--r); overflow: hidden; border: 1.5px solid var(--border); }
+.auto-table thead tr { background: var(--navy); }
+.auto-table thead th { padding: 14px 20px; font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; color: rgba(255,255,255,0.6); text-align: left; }
+.auto-table thead th:last-child, .auto-table thead th:nth-last-child(2) { text-align: right; }
+.auto-table tbody tr { border-bottom: 1px solid var(--border); transition: background 0.15s; }
+.auto-table tbody tr:last-child { border-bottom: none; }
+.auto-table tbody tr:hover { background: #f0fdf4; }
+.auto-table tbody td { padding: 16px 20px; font-size: 0.85rem; }
+.auto-table tbody td:last-child, .auto-table tbody td:nth-last-child(2) { text-align: right; font-weight: 700; color: var(--navy); white-space: nowrap; }
+.auto-table .td-name { font-weight: 700; color: var(--navy); margin-bottom: 2px; }
+.auto-table .td-desc { font-size: 0.75rem; color: var(--muted); }
+.auto-table .td-badge {
+  display: inline-block; background: rgba(103,200,124,0.1); border: 1px solid rgba(103,200,124,0.3);
+  color: var(--green2); font-size: 0.6rem; font-weight: 700; text-transform: uppercase;
+  letter-spacing: 1px; padding: 2px 7px; border-radius: 50px; margin-left: 6px; vertical-align: middle;
+}
+
+/* ── COMBO SECTION ── */
+.combo-section {
+  background: var(--navy);
+  padding: 56px 0;
+  margin: 0 -24px;
+  position: relative;
+  overflow: hidden;
+}
+.combo-section::before {
+  content: '';
+  position: absolute;
+  width: 600px; height: 600px; border-radius: 50%;
+  background: rgba(103,200,124,0.06);
+  top: -200px; right: -200px;
+}
+.combo-section .section-label { color: var(--green3); background: rgba(103,200,124,0.12); border-color: rgba(103,200,124,0.25); }
+.combo-section .section-title { color: var(--white); }
+.combo-section .section-sub { color: rgba(255,255,255,0.5); }
+
+.combos { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 32px; }
+
+.combo {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: var(--r);
+  padding: 28px 26px;
+  position: relative;
+  transition: border-color 0.2s, background 0.2s;
+}
+.combo:hover { border-color: rgba(103,200,124,0.4); background: rgba(103,200,124,0.06); }
+.combo.star {
+  border-color: rgba(103,200,124,0.5);
+  background: rgba(103,200,124,0.08);
+}
+.combo-star-badge {
+  position: absolute; top: -11px; left: 24px;
+  background: var(--green); color: var(--navy);
+  font-size: 0.6rem; font-weight: 800;
+  text-transform: uppercase; letter-spacing: 1.5px;
+  padding: 3px 10px; border-radius: 50px;
+}
+.combo-name { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: rgba(255,255,255,0.4); margin-bottom: 6px; }
+.combo-title { font-size: 1.1rem; font-weight: 800; color: var(--white); margin-bottom: 12px; }
+.combo-price { display: flex; align-items: baseline; gap: 6px; margin-bottom: 4px; }
+.combo-amount { font-size: 2rem; font-weight: 900; letter-spacing: -1px; color: var(--green3); }
+.combo-period { font-size: 0.8rem; color: rgba(255,255,255,0.4); }
+.combo-saving { font-size: 0.72rem; color: var(--green); font-weight: 600; margin-bottom: 16px; }
+.combo-divider { border: none; border-top: 1px solid rgba(255,255,255,0.08); margin-bottom: 16px; }
+.combo-includes { list-style: none; display: flex; flex-direction: column; gap: 7px; }
+.combo-includes li { font-size: 0.8rem; color: rgba(255,255,255,0.7); display: flex; align-items: flex-start; gap: 8px; }
+.combo-includes li::before { content: '✓'; color: var(--green); font-weight: 700; flex-shrink: 0; }
+
+/* ── TERMS ── */
+.terms-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 32px; }
+.term {
+  background: var(--white); border: 1.5px solid var(--border);
+  border-radius: var(--r); padding: 24px 20px;
+}
+.term-icon { font-size: 1.6rem; margin-bottom: 10px; }
+.term-title { font-size: 0.85rem; font-weight: 700; color: var(--navy); margin-bottom: 6px; }
+.term-text { font-size: 0.78rem; color: var(--muted); line-height: 1.6; }
+.term-text strong { color: var(--navy); }
+
+/* ── CLIENTS TIER ── */
+.clients-band {
+  background: var(--white);
+  border: 1.5px solid var(--border);
+  border-radius: var(--r);
+  padding: 28px 32px;
+  margin-top: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+.clients-band h3 { font-size: 1rem; font-weight: 800; color: var(--navy); margin-bottom: 4px; }
+.clients-band p { font-size: 0.82rem; color: var(--muted); max-width: 380px; }
+.founding-badge {
+  background: linear-gradient(135deg, var(--green2), var(--green));
+  color: var(--navy); padding: 12px 28px;
+  border-radius: 50px; font-size: 0.85rem; font-weight: 800;
+  white-space: nowrap; text-align: center;
+  box-shadow: 0 4px 20px rgba(103,200,124,0.35);
+}
+.founding-badge small { display: block; font-size: 0.65rem; font-weight: 600; margin-top: 1px; opacity: 0.8; }
+
+/* ── FOOTER ── */
+.foot {
+  background: var(--navy);
+  padding: 32px 48px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 0;
+}
+.foot .logo { font-size: 1rem; }
+.foot-info { font-size: 0.8rem; color: rgba(255,255,255,0.4); }
+.foot-info a { color: var(--green3); text-decoration: none; }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 700px) {
+  .header { padding: 16px 20px; }
+  .hero { padding: 40px 20px; }
+  .plans { grid-template-columns: 1fr; }
+  .combos { grid-template-columns: 1fr; }
+  .terms-grid { grid-template-columns: 1fr; }
+  .combo-section { margin: 0 -20px; padding: 40px 0; }
+  .clients-band { flex-direction: column; }
+  .foot { padding: 24px 20px; flex-direction: column; text-align: center; }
+}
+
+/* ── PRINT ── */
+@media print {
+  body { background: white; }
+  .header { position: static; box-shadow: none; }
+  .combo-section { margin: 0; }
+  @page { margin: 1.5cm; }
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="header">
+  <div class="logo"><span>EDGY</span> Sistemas</div>
+  <div class="header-right">
+    <div class="header-label">Propuesta Comercial</div>
+    <div class="header-title">Automatización &amp; Software de Gestión</div>
+  </div>
+</header>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-eyebrow">Soluciones para PyMEs · 2026</div>
+  <h1>Tu negocio automatizado<br>con <em>inteligencia artificial</em></h1>
+  <p>Software de gestión modular + agentes de IA que trabajan por vos. Sin código, sin complicaciones.</p>
+</div>
+
+<div class="wrap">
+
+  <!-- ═══════════════════════════════
+       PRODUCTO 1: EDGY GESTIÓN
+  ═══════════════════════════════ -->
+  <div class="section">
+    <div class="section-label">Producto 1</div>
+    <h2 class="section-title">Edgy Gestión — Software de PyME</h2>
+    <p class="section-sub">Tesorería, Ventas, Stock y más — en un sistema modular que crece con tu negocio. Acceso desde cualquier dispositivo.</p>
+
+    <div class="plans">
+
+      <!-- STARTER -->
+      <div class="plan">
+        <div class="plan-name">Starter</div>
+        <div class="plan-price"><sup>USD </sup>120<sub>/mes</sub></div>
+        <div class="plan-setup">+ USD 200 setup inicial</div>
+        <div class="plan-divider"></div>
+        <ul class="plan-features">
+          <li>Módulo Tesorería completo</li>
+          <li>Indicadores de salud financiera</li>
+          <li>Reservas líquidas en tiempo real</li>
+          <li>Hasta 2 usuarios</li>
+          <li class="muted">Módulo Ventas</li>
+          <li class="muted">Módulo Artículos / Stock</li>
+          <li class="muted">Módulo Compras</li>
+        </ul>
+      </div>
+
+      <!-- NEGOCIO (FEATURED) -->
+      <div class="plan featured">
+        <div class="plan-badge">Más elegido</div>
+        <div class="plan-name">Negocio</div>
+        <div class="plan-price"><sup>USD </sup>220<sub>/mes</sub></div>
+        <div class="plan-setup">+ USD 300 setup inicial</div>
+        <div class="plan-divider"></div>
+        <ul class="plan-features">
+          <li>Módulo Tesorería completo</li>
+          <li>Indicadores de salud financiera</li>
+          <li>Reservas líquidas en tiempo real</li>
+          <li>Hasta 5 usuarios</li>
+          <li>Módulo Ventas</li>
+          <li>Módulo Artículos / Stock</li>
+          <li class="muted">Módulo Compras</li>
+        </ul>
+      </div>
+
+      <!-- TOTAL -->
+      <div class="plan">
+        <div class="plan-name">Total</div>
+        <div class="plan-price"><sup>USD </sup>350<sub>/mes</sub></div>
+        <div class="plan-setup">+ USD 400 setup inicial</div>
+        <div class="plan-divider"></div>
+        <ul class="plan-features">
+          <li>Módulo Tesorería completo</li>
+          <li>Indicadores de salud financiera</li>
+          <li>Reservas líquidas en tiempo real</li>
+          <li>Usuarios ilimitados</li>
+          <li>Módulo Ventas</li>
+          <li>Módulo Artículos / Stock</li>
+          <li>Módulo Compras</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- ═══════════════════════════════
+       PRODUCTO 2: AUTOMATIZACIÓN
+  ═══════════════════════════════ -->
+  <div class="section">
+    <div class="section-label">Producto 2</div>
+    <h2 class="section-title">Edgy Automatiza — IA &amp; Agentes</h2>
+    <p class="section-sub">Automatizamos los procesos repetitivos de tu negocio usando n8n y agentes de IA. Configuramos, vos operás.</p>
+
+    <table class="auto-table">
+      <thead>
+        <tr>
+          <th>Servicio</th>
+          <th>Qué incluye</th>
+          <th>Setup único</th>
+          <th>Mensual</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <div class="td-name">Flujos Básicos</div>
+            <div class="td-desc">Ideal para arrancar</div>
+          </td>
+          <td style="font-size:0.8rem; color:#6b7280; max-width:260px">
+            1–3 automatizaciones: alertas por WhatsApp, reportes automáticos, notificaciones de stock
+          </td>
+          <td>USD 500</td>
+          <td>USD 100</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="td-name">Pack PyME <span class="td-badge">Popular</span></div>
+            <div class="td-desc">El más solicitado</div>
+          </td>
+          <td style="font-size:0.8rem; color:#6b7280; max-width:260px">
+            3–8 flujos + integración WhatsApp/email + seguimiento de clientes automatizado
+          </td>
+          <td>USD 1.200</td>
+          <td>USD 200</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="td-name">Agente IA Personalizado</div>
+            <div class="td-desc">Solución a medida</div>
+          </td>
+          <td style="font-size:0.8rem; color:#6b7280; max-width:260px">
+            Agente de IA entrenado para tu negocio: responde consultas, procesa pedidos, genera informes
+          </td>
+          <td>USD 2.000+</td>
+          <td>USD 300</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+</div><!-- /wrap -->
+
+<!-- ═══════════════════════════════
+     COMBOS
+═══════════════════════════════ -->
+<div class="combo-section">
+  <div class="wrap" style="padding-top:0; padding-bottom:0; position:relative; z-index:1;">
+    <div class="section-label">Paquetes Combinados</div>
+    <h2 class="section-title">Gestión + Automatización</h2>
+    <p class="section-sub">La combinación que más resultado da. 15% de descuento sobre los precios separados.</p>
+
+    <div class="combos">
+
+      <div class="combo">
+        <div class="combo-name">Pack Combo</div>
+        <div class="combo-title">Gestión + Automatización</div>
+        <div class="combo-price">
+          <div class="combo-amount">USD 290</div>
+          <div class="combo-period">/mes</div>
+        </div>
+        <div class="combo-saving">✓ Ahorrás USD 30/mes vs contratar por separado</div>
+        <div class="combo-divider"></div>
+        <ul class="combo-includes">
+          <li>Plan Negocio (Tesorería + Ventas + Stock)</li>
+          <li>Pack Flujos Básicos (3 automatizaciones)</li>
+          <li>Hasta 5 usuarios</li>
+          <li>Soporte prioritario</li>
+        </ul>
+      </div>
+
+      <div class="combo star">
+        <div class="combo-star-badge">⭐ Recomendado</div>
+        <div class="combo-name">Pack Completo</div>
+        <div class="combo-title">PyME Total con IA</div>
+        <div class="combo-price">
+          <div class="combo-amount">USD 500</div>
+          <div class="combo-period">/mes</div>
+        </div>
+        <div class="combo-saving">✓ Ahorrás USD 50/mes vs contratar por separado</div>
+        <div class="combo-divider"></div>
+        <ul class="combo-includes">
+          <li>Plan Total (todos los módulos)</li>
+          <li>Pack PyME (hasta 8 automatizaciones)</li>
+          <li>Usuarios ilimitados</li>
+          <li>Agente IA básico incluido</li>
+          <li>Soporte prioritario + capacitación</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <!-- ═══════════════════════════════
+       CONDICIONES
+  ═══════════════════════════════ -->
+  <div class="section">
+    <div class="section-label">Condiciones</div>
+    <h2 class="section-title">Lo que necesitás saber</h2>
+
+    <div class="terms-grid">
+      <div class="term">
+        <div class="term-icon">💵</div>
+        <div class="term-title">Precios en dólares</div>
+        <div class="term-text">Todos los valores están en <strong>dólares estadounidenses</strong>. El pago puede realizarse al tipo de cambio MEP/CCL del día o en efectivo en USD.</div>
+      </div>
+      <div class="term">
+        <div class="term-icon">📅</div>
+        <div class="term-title">Contrato mínimo 6 meses</div>
+        <div class="term-text">El plan mensual requiere un compromiso mínimo de <strong>6 meses</strong>. Modalidad mes a mes disponible con un recargo del 20% sobre el precio publicado.</div>
+      </div>
+      <div class="term">
+        <div class="term-icon">⚡</div>
+        <div class="term-title">Setup siempre incluido</div>
+        <div class="term-text">El fee de setup cubre la <strong>implementación, carga inicial de datos y capacitación</strong> del equipo. Se abona al inicio y no es reembolsable.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════
+       CLIENTES FUNDADORES
+  ═══════════════════════════════ -->
+  <div class="section">
+    <div class="section-label">Clientes Fundadores · Cupo: 5 empresas</div>
+    <h2 class="section-title">Entrá primero, quedás mejor para siempre</h2>
+    <p class="section-sub">Las primeras 5 empresas que contraten acceden a tres beneficios exclusivos que no estarán disponibles después.</p>
+
+    <div class="terms-grid" style="margin-top:28px">
+
+      <div class="term" style="border-color:rgba(103,200,124,0.4); background:linear-gradient(135deg,#f0fdf4,#fff)">
+        <div class="term-icon">🔒</div>
+        <div class="term-title">Precio bloqueado de por vida</div>
+        <div class="term-text">El precio que contratás hoy es el que pagás <strong>siempre</strong>, aunque los precios suban. Sin sorpresas, sin renegociaciones. Para siempre es para siempre.</div>
+      </div>
+
+      <div class="term" style="border-color:rgba(103,200,124,0.4); background:linear-gradient(135deg,#f0fdf4,#fff)">
+        <div class="term-icon">⚙️</div>
+        <div class="term-title">Una automatización a medida</div>
+        <div class="term-text">Analizamos un proceso de tu negocio y lo <strong>automatizamos sin costo adicional</strong>. Vos elegís qué: alertas de stock, seguimiento de clientes, reportes automáticos, lo que más te sirva.</div>
+      </div>
+
+      <div class="term" style="border-color:rgba(103,200,124,0.4); background:linear-gradient(135deg,#f0fdf4,#fff)">
+        <div class="term-icon">🤝</div>
+        <div class="term-title">Onboarding presencial</div>
+        <div class="term-text">Vamos a tu empresa, configuramos el sistema con tus datos reales y <strong>capacitamos a tu equipo en persona</strong>. Arrancás desde el día uno sin depender de tutoriales.</div>
+      </div>
+
+    </div>
+
+    <div class="clients-band" style="margin-top:20px">
+      <div>
+        <h3>¿Cómo acceder?</h3>
+        <p>Firmá el contrato antes de que se complete el cupo. Aplica a cualquier plan o combo. El precio bloqueado rige desde la fecha de firma.</p>
+      </div>
+      <div class="founding-badge">
+        Solo 5 cupos<br>
+        <small>Precio fundador · Para siempre</small>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /wrap -->
+
+<!-- FOOTER -->
+<footer class="foot">
+  <div class="logo"><span>EDGY</span> Sistemas</div>
+  <div class="foot-info">
+    Carlos Copelotti &nbsp;·&nbsp; Santa Rosa, La Pampa &nbsp;·&nbsp;
+    <a href="https://edgysistemas.tech">edgysistemas.tech</a>
+  </div>
+</footer>
+
+</body>
+</html>
